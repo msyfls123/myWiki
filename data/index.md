@@ -12,6 +12,6 @@ msyfls123
 4. Python编程实践
 
 ###待学习的网站/内容###
-1. [Learnyournode](https://github.com/workshopper/learnyounode)--[NodeSchool](http://nodeschool.io/)
+1. [Learnyounode](https://github.com/workshopper/learnyounode)--[NodeSchool](http://nodeschool.io/)
 2. [项目实战：Django个人博客系统](http://www.maiziedu.com/course/others/309-6051/)--[麦子学院](www.maiziedu.com/)
 3. [MITx: 6.00.1x - 计算机科学和Python编程导论](http://www.xuetangx.com/courses/course-v1:MITx+6_00_1x+2015_T1/info)--[学院在线](http://www.xuetangx.com/)
