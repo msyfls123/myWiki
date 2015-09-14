@@ -65,3 +65,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv)
 <iframe src="store/quarter/quarter.html" width=628 height=255 frameBorder="0" style="background:#ececec"></iframe>
 
 <center>悬浮切换背景</center>
+
+###尚致设计-易企秀
+
+<iframe width="628px" frameborder = "0" height="661px" src="http://eqxiu.com/s/xhJv1aEi" style="padding:20px 153px;background:#ECECEC"></iframe>
