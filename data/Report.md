@@ -58,7 +58,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv)
 	console.log(listTotal.join(","))
 	//输出成数据
 
-<iframe src="store/banner/demo.html" style="transform:scale(0.48,0.48);width:210%;height:650px;margin:-160px -345px;display;block" frameBorder="0"></iframe>
+<iframe src="store/banner/demo.html" style="width:640px;height:350px;display;block" frameBorder="0"></iframe>
 
 <center>网站首页banner展示</center>
 
