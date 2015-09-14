@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap-carousel.js"></script>
+	<script type="text/javascript" src="bootstrap-transition.js"></script>
+	
+	<link href="bootstrap.css" rel="stylesheet">
+	<style>
+	#container{width:1280px;height:640px;margin:0 0 0 -640px;overflow: hidden;position: relative;left: 50%;top: 50px;cursor: pointer;}
+	.foo{position: absolute;top: 280px;left: 50%;margin-left: -300px;width: 600px;font-family: Segoe Script;color: #ffea02;font-size: 24px;text-align: center;display: none;z-index: 10;}
+	.cover{background: rgba(0,0,0,0.4);width: 1280px;height: 600px;display: none;position: absolute;z-index: 5;}
+	.carousel-control{z-index: 100;top: 280px;opacity: 0.1}
+	.carousel-control:hover{opacity: 1;}
+	.blur {	
+	    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+	    
+	    -webkit-filter: blur(5px); /* Chrome, Opera */
+	       -moz-filter: blur(5px);
+	        -ms-filter: blur(5px);    
+	            filter: blur(5px);
+	    
+	    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+	}
+	</style>
+</head>
+<body style="zoom:50%">
+	<div id="container" class="carousel slide">
+
+  			<!-- Carousel items -->
+		<div class="carousel-inner slide">
+		<div class="active item">
+			<div class="foo">The trend of future that you now feel</div>
+			<div class="cover"></div>
+			<img src="banner1.jpg">
+		</div>
+		<div class="item">
+			<div class="foo">You will like it</div>
+			<div class="cover"></div>
+			<img src="banner2.jpg">
+		</div>
+		<div class="item">
+			<div class="foo">Maybe you will not?</div>
+			<div class="cover"></div>
+			<img src="banner3.jpg">
+		</div>
+		</div>
+		<!-- Carousel nav -->
+		<a class="carousel-control left" href="#container" data-slide="prev">&lsaquo;</a>
+		<a class="carousel-control right" href="#container" data-slide="next">&rsaquo;</a>
+	</div>
+	<script type="text/javascript">
+		$(".item").mouseleave(function(){
+			if($(this).hasClass("active")){
+			$(this).find("img").removeClass("blur")
+			$(this).find(".foo").stop(true,true).slideUp('fast')
+			$(this).find(".cover").stop(true,true).fadeOut('fast')}
+		})
+		$(".item").mouseenter(function(){
+			if($(this).hasClass("active")){
+			$(this).find("img").addClass("blur")
+			$(this).find(".foo").stop(true,true).slideDown('fast')
+			$(this).find(".cover").stop(true,true).fadeIn('fast')}
+		})
+		$('.carousel').carousel('cycle')
+	</script>
+	</body>
+</html>
