@@ -26,3 +26,10 @@ result:
 	Charles' task - vacuum hallway
 
 [原文链接](http://i.rexdf.org/blog/2014/11/06/csssheng-cheng-nei-rong/)
+
+
+###Git小贴士
+
+`git commit -m "description"` 保存改动
+
+`git push oripin gh-pages` 上传改动
