@@ -29,7 +29,7 @@ body>#header a {
 }
 body>#header h1 {
 	text-align: center;
-	line-height: 84px;
+	/*line-height: 84px;*/
 	margin: 0;
 	font-family: Showcard Gothic
 }

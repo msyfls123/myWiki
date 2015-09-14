@@ -58,10 +58,10 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv)
 	console.log(listTotal.join(","))
 	//输出成数据
 
-<iframe src="store/banner/demo.html" style="width:640px;height:350px;display;block" frameBorder="0"></iframe>
+<iframe src="store/banner/demo.html" style="width:628px;height:350px;display;block" frameBorder="0"></iframe>
 
 <center>网站首页banner展示</center>
 
-<iframe src="store/quarter/quarter.html" width=640 height=255 frameBorder="0" style="background:#ececec"></iframe>
+<iframe src="store/quarter/quarter.html" width=628 height=255 frameBorder="0" style="background:#ececec"></iframe>
 
 <center>悬浮切换背景</center>
