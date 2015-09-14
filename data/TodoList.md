@@ -13,3 +13,5 @@
 1. 取钱
 2. 干衣机PPT+方案
 3. 两个网站
+
+![bridge](imgs/bridge.jpg)
