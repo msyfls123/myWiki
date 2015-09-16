@@ -77,7 +77,7 @@
               easingOut: 'swing',        // Set the zoom-out animation easing.
               zoomOpacity: false,        // If true, changes image transparency when zooming.
               overlayShow: true,         // Display an overlay under the imgBox.
-              overlayOpacity: 0.8,       // Set overlay opacity.
+              overlayOpacity: 0.85,       // Set overlay opacity.
               hideOnOverlayClick: true,  // Hide imgBox when the overlay is clicked.
               hideOnContentClick: true, // Hide imgBox when the image is clicked.
               slideshow: false,           // Display next/previous controls.
@@ -87,7 +87,7 @@
     </script>
 
 <ul id="flow-box">
-    <li><a title="尚致设计" href="imgs/repo/1.jpg"><img alt="" src="imgs/repo/1.jpg"/></a>
+    <li><a title="尚致设计示意图——采用线稿描绘，填充颜色的方法进行创作" href="imgs/repo/1.jpg"><img alt="尚致设计示意图" src="imgs/repo/1.jpg"/></a>
         <h6>Img 1</h6>
     </li>
     <li><a href="imgs/repo/2.jpg"><img src="imgs/repo/2.jpg"></a>
@@ -144,7 +144,7 @@
      3.计算高度值最小的值是哪个li
      4.把接下来的li放到那个li的下面
      */
-    var margin = 10;//这里设置间距
+    var margin = 8;//这里设置间距
     var li=$("#flow-box li");//这里是区块名称
     var li_W = li[0].offsetWidth+margin;//取区块的实际宽度（包含间距，这里使用源生的offsetWidth函数，不适用jQuery的width()函数是因为它不能取得实际宽度，例如元素内有pandding就不行了）
     function waterFlowImg(){//定义成函数便于调用
@@ -154,23 +154,23 @@
             li_H = li[i].offsetHeight;//获取每个li的高度
             if(i < n) {//n是一行最多的li，所以小于n就是第一行了
                 h[i]=li_H;//把每个li放到数组里面
-                li.eq(i).css("top",0);//第一行的Li的top值为0
-                li.eq(i).css("left",i * li_W);//第i个li的左坐标就是i*li的宽度
+                li.eq(i).css("top",8);//第一行的Li的top值为0
+                li.eq(i).css("left",i * li_W+8);//第i个li的左坐标就是i*li的宽度
             }
             else{
                 min_H =Math.min.apply(null,h) ;//取得数组中的最小值，区块中高度值最小的那个
                 minKey = getArrayKey(h, min_H);//最小的值对应的指针
                 h[minKey] += li_H+margin ;//加上新高度后更新高度值
-                li.eq(i).css("top",min_H+margin);//先得到高度最小的Li，然后把接下来的li放到它的下面
-                li.eq(i).css("left",minKey * li_W);//第i个li的左坐标就是i*li的宽度
+                li.eq(i).css("top",min_H+margin+8);//先得到高度最小的Li，然后把接下来的li放到它的下面
+                li.eq(i).css("left",minKey * li_W+8);//第i个li的左坐标就是i*li的宽度
             }
-            $("h6").eq(i).text("Img："+i+"，Hight："+li_H +"px");//把区块的序号和它的高度值写入对应的区块h6标题里面
+            $("h6").eq(i).text(li.eq(i).find("img").attr("alt"));//把区块的序号和它的高度值写入对应的区块h6标题里面
         }
        var LiTop=li.eq(li.length-1).css("top");
        var LiTopNum=Number(LiTop.slice(0,-2));
        var LiHeight=li.eq(li.length-1).css("height");
        var LiHeightNum=Number(LiHeight.slice(0,-2));
-       $("#flow-box").css("height",LiTopNum+LiHeightNum+50)
+       $("#flow-box").css("height",LiTopNum+LiHeightNum+30)
     }
     /* 使用for in运算返回数组中某一值的对应项数(比如算出最小的高度值是数组里面的第几个) */
     function getArrayKey(s, v) {for(k in s) {if(s[k] == v) {return k;}}}

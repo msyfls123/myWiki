@@ -124,8 +124,9 @@ body>#main #content blockquote>blockquote {
 
 
 /*报告页面特有*/
-#flow-box { position: relative; max-width: 628px;}
+#flow-box { position: relative; max-width: 628px;background: #e9e9e9;}
 #flow-box li { position: absolute; background: #fff; border: solid 1px #ccc; text-align: center; padding: 8.5px; left: 0px; top: 0; list-style: none;}
+#flow-box li:hover {border: solid 1px #0EB7DC;box-shadow: 0px 0px 3px 2px rgba(14,183,220,0.35)}
 #flow-box h3 { padding-top: 8px; }
 #flow-box img { width: 180px; height: auto; display: block; border: 0;}
     /*css3动画*/
