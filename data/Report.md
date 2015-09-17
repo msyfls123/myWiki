@@ -200,11 +200,9 @@
 <iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;background-color: #0EB7DC;background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
 
 ###美的透明展示屏
-<div style="position:relative;left:50%;margin-left:-241px;">
+<div style="margin:0 62px;padding:10px 10px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;">
 	<embed id="" height="482" allowscriptaccess="never" style="visibility:visible;" pluginspage="http://get.adobe.com/cn/flashplayer/" flashvars="playMovie=true&amp;auto=1&amp;autostart=true" width="482" allowfullscreen="true" quality="high" src="http://www.miaopai.com/show/eINtArQJmpUwonu3vMROag__.swf" type="application/x-shockwave-flash" wmode="transparent">
 </div>
-
-
 
 <!-- d3读取csv测试 -->
 <!-- <div id="csv"></div>
