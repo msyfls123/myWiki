@@ -183,20 +183,21 @@
 
 ###网站首页banner展示
 
-<iframe src="store/banner/demo.html" style="transform:scale(0.5,0.5);width:1308px;height:729px;display;block;margin:-190px -340px" frameBorder="0"></iframe>
+<iframe src="store/banner/demo.html" style="transform:scale(0.5,0.5);width:1308px;height:625px;display;block;margin:-157px -340px;border: 1px solid #aaa;border-radius: 10px;" scrolling="no"></iframe>
 
-###浮切换背景
+###鼠标悬浮切换背景
 
-<iframe src="store/quarter/quarter.html" width=628 height=255 frameBorder="0" style="background:#EFEFEF"></iframe>
+<iframe src="store/quarter/quarter.html" width=628 height=300 frameBorder="0" style="padding:20px 0px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;"></iframe>
 
 
 
 ###尚致设计-易企秀
 
-<iframe width="628px" frameborder = "0" height="661px" src="http://eqxiu.com/s/xhJv1aEi" style="padding:20px 153px;background:#EFEFEF"></iframe>
+<iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/xhJv1aEi" style="padding:20px 153px;background-color: #0EB7DC;
+    background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
 
 ###尚致设计-微官网
-<iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;background:#EFEFEF"></iframe>
+<iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;background-color: #0EB7DC;background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
 
 ###美的透明展示屏
 <div style="position:relative;left:50%;margin-left:-241px;">
