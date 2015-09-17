@@ -120,7 +120,7 @@ a.imgbox {
 }
 
 /* Light theme */
-.imgbox-light #imgbox-overlay {
+/*.imgbox-light */#imgbox-overlay {
   background: black;
 }
 .imgbox-light .imgbox-title {
@@ -155,9 +155,9 @@ a.imgbox {
 }
 
 /* Dark theme */
-.imgbox-dark #imgbox-overlay {
+/*.imgbox-dark #imgbox-overlay {
   background: white;
-}
+}*/
 .imgbox-dark .imgbox-title {
   color: black;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
