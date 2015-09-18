@@ -183,11 +183,11 @@
 
 ###网站首页banner展示
 
-<iframe src="store/banner/demo.html" style="transform:scale(0.5,0.5);width:1308px;height:625px;display;block;margin:-157px -340px;border: 1px solid #aaa;border-radius: 10px;" scrolling="no"></iframe>
+<iframe src="store/banner/demo.html" style="width:628px;height:310px;display:block;border: 1px solid #aaa;border-radius: 10px;" scrolling="no"></iframe>
 
 ###鼠标悬浮切换背景
 
-<iframe src="store/quarter/quarter.html" width=628 height=300 frameBorder="0" style="padding:20px 0px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;"></iframe>
+<iframe src="store/quarter/quarter.html" width=628 height=300 frameBorder="0" style="padding:20px 0px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px" scrolling="no"></iframe>
 
 
 
