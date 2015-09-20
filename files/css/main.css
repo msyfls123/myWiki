@@ -118,12 +118,44 @@ body>#main #content .img-box img {
 body>#main #content blockquote {
 	background: #F0F0F0;
 	border-left: 5px solid #87E5EF;
+	font-size: 16px;
+	padding: 0 20px;
 }
 body>#main #content blockquote>blockquote {
 	background: #FFF;
 }
 
+body>#main table {
+	width: 100%;
+}
+body>#main tr {
+	background: #F4F4F4;
+	width: 100%;
+}
+body>#main td {
+	padding: 5px;
+	border: 1px solid #ccc;
+	font-size: 12px;
+}
 
+body>#main td:nth-child(even) {
+	background: #fff;
+}
+
+body>#main td:nth-child(2),body>#main td:nth-child(3) {
+	width: 7%;
+}
+
+body>#main th {
+	padding: 5px;
+	background: #fff;
+	text-align: center;
+	border: 1px solid #CCC;
+}
+
+body>#main h1,h2,h3,h4,h5{
+	font-weight: bold;
+}
 
 /*报告页面特有*/
 #flow-box { position: relative; max-width: 628px;background: #f2f2f2;}
