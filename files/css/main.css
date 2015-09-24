@@ -165,3 +165,19 @@ body>#main h1,h2,h3,h4,h5{
 #flow-box img { width: 180px; height: auto; display: block; border: 0;}
     /*css3动画*/
 #flow-box li { -webkit-transition: all .4s ease-out .1s; -moz-transition: all .4s ease-out; -o-transition: all .4s ease-out .1s; transition: all .4s ease-out .1s }
+
+#quickLink{position: absolute;left: -200px;top: 605px;width: 200px;background-color: #f7f7f7;font-size: 13px;color: #888;border-left: 3px solid #87E5EF;visibility: hidden;}
+#quickLink p{text-align: center;background: #e0e0e0;font-weight: bold;font-size: 16px;}
+#quickLink ul {list-style: none;color: #999;padding: 10px 0 0 30px;}
+#quickLink ul li:hover{color: #39c;cursor: pointer;text-indent: -11px;}
+#quickLink ul li:hover:before{content:"¶  "}
+#quickLink ul li{line-height: 20px;}
+#quickLink ul li.s{list-style: none;font-weight:bold;color: #666}
+#quickLink ul li.s:hover{color: #39c;cursor: pointer;}
+#quickLink ul li.ss{list-style: none;color: #777}
+#quickLink ul li.ss:hover{color: #39c;cursor: pointer;}
+#quickLink ul li.get{color: #39c;text-indent: -12px;}
+#quickLink ul li.get:before{content:"¶  "}
+
+#backTop{display:none;position:fixed;width:40px;height:40px;bottom:60px;left:50%;margin-left:520px;background: url(../../imgs/backtop.png) no-repeat 0px 0px;opacity: 0.65}
+#backTop:hover{background-position: -40px 0px;cursor: pointer;opacity: 1}

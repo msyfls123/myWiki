@@ -338,18 +338,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 <!-- 测试结束 -->
 
 <style type="text/css">
-#quickLink{position: absolute;left: -200px;top: 605px;width: 200px;background-color: #f7f7f7;font-size: 13px;color: #888;border-left: 3px solid #87E5EF;visibility: hidden;}
-#quickLink p{text-align: center;background: #e0e0e0;font-weight: bold;font-size: 16px;}
-#quickLink ul {list-style: none;color: #999;padding: 10px 0 0 30px;}
-#quickLink ul li:hover{color: #39c;cursor: pointer;text-indent: -11px;}
-#quickLink ul li:hover:before{content:"¶  "}
-#quickLink ul li{line-height: 20px;}
-#quickLink ul li.s{list-style: none;font-weight:bold;color: #666}
-#quickLink ul li.s:hover{color: #39c;cursor: pointer;}
-#quickLink ul li.ss{list-style: none;color: #777}
-#quickLink ul li.ss:hover{color: #39c;cursor: pointer;}
-#quickLink ul li.get{color: #39c;text-indent: -12px;}
-#quickLink ul li.get:before{content:"¶  "}
+
 
 </style>
 
@@ -357,5 +346,5 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
   <ul>
   </ul>
 </div>
-
+<div id="backTop"></div>
 <script src="files/js/scrollTab.js"></script>

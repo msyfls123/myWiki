@@ -20,8 +20,10 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 			function scrollEvent4(){            //固定右侧quickLink
 				var scroH = $(this).scrollTop();
 				if(scroH>=quickH){
+					$("#backTop").fadeIn(1000);
 					$("#quickLink").css({"position":"fixed","top":"45px","left":"50%","margin-left":"-590px","visibility":"visible"});
 				}else if(scroH<quickH){
+					$("#backTop").fadeOut(500);
 					$("#quickLink").css({"position":"absolute","top":"605px","left":"-200px","margin-left":"0px","visibility":"hidden"});
 				}
 			};
@@ -37,3 +39,7 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 				};
 			};
 			$(window).scroll(function(){scrollEvent4();scrollEvent5()});   //注册固定导航栏事件
+
+			$("#backTop").click(function(){ 
+			$('body,html').animate({scrollTop:"0px"}, 1000); return false;
+		});
