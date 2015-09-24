@@ -93,7 +93,7 @@ pre code {
 }
 pre code .code-line {
 	position: relative;
-	min-height: 1.8em;
+	min-height: 1.6em;
 }
 pre code .code-line .line-num {
 	position: absolute;

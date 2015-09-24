@@ -128,7 +128,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 	console.log(listTotal.join(","))
 
 ###产品众筹部分
->酒香就怕巷子深
+>酒香还怕巷子深
 
 俗话说酒香不怕巷子深，但这句话在当今的社会早就是不适用的了。人人都在使劲推广自家的产品和服务，让设计走出去成为当下必然的选择。
 
@@ -149,6 +149,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 
 这里运用了情感化设计的方法，将臭氧杀菌的过程拟人化、卡通化，以达到取悦消费者的需求，增进消费者对产品的喜爱度。各种精致的实物展示图则是获取消费者的信任感，提升他们对于产品的认同度。当然，最后消费者的感受能否转化成实际的购买力，那就要看产品的定位与消费者的实际消费水平的均衡，这也就是众筹的目的所在。
 
+[众筹网演示页面](http://www.zhongchou.com/deal-show/id-195967)
 
 ####饮食净化器宣传
 <iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/2Ra6kSQR" style="padding:20px 153px;background-color: #0EB7DC;background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
@@ -166,14 +167,53 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 
 <!-- 添加图片 -->
 <script type="text/javascript">
+  var titlearr=[
+    ["null","hello~friend"],
+    ["尚致设计有限公司图示","卡通色块风格，使用AI创作"],
+    ["尚致设计有限公司简介","在前图基础上添加铺在地上的文字，增加纵深感"],
+    ["手持吸奶器","海马状的造型，独创间歇式吮吸模式，荣膺红星奖"],
+    ["牙科综合治疗椅","海底生物造型，多项先进专利，荣膺红星奖"],
+    ["某品牌汽车除味机","版面设计"],
+    ["某品牌汽车除味机","版面设计"],
+    ["某品牌手机APP设计","仿支付宝APP设计"],
+    ["某品牌手机APP设计","常规选项页面"],
+    ["某品牌网页设计","突出商品售卖的首页"],
+    ["某品牌网页设计","文章页面设计"],
+    ["某品牌手机APP设计","文章页面"],
+    ["某品牌网页设计","文章列表页设计"],
+    ["某品牌网页设计","图文列表页设计"],
+    ["绿真易企秀页面","说明食品污染的严重性"],
+    ["绿真易企秀页面","功能说明图标"],
+    ["绿真易企秀页面","漫画形式表现水分子的运动"],
+    ["绿真易企秀页面题","漫画形式展现水分子消除农残和病菌"],
+    ["某品牌智能锁众筹方案","众筹详情页面简笔设计草案，待实施"],
+    ["创意咖啡背景墙","水滴入水池多边形风格"],
+    ["创意咖啡背景墙","电脑连接APP"],
+    ["绿真众筹封面图","绿真众筹封面图"],
+    ["简洁列表页","某品牌皮鞋列表页"],
+    ["品牌展示页","某品牌皮鞋展示页"],
+    ["品牌宣传页","某品牌企业风格展示页"],
+    ["某干衣机设计","有钱男性风格"],
+    ["某干衣机设计","单身女性风格"],
+    ["干衣机外包装设计","简洁被风吹起的衣服图案"],
+    ["某干衣机衣柜设计","呆萌喷水鲸鱼风格"],
+    ["某品牌企业招贴画","万丈高楼平地起，体现力量感"],
+    ["某品牌企业招贴画计","机器手抓取残次品，体现严谨"],
+    ["某品牌企业招贴画","树的叠影，体现成长"],
+    ["某品牌企业招贴画","一群大雁，体现团结的力量"],
+    ["某品牌企业招贴画","撑杆跳，体现飞翔的感觉"],
+
+  ]
+
   for (var i = 1; i <= 33; i++) {
       var imgLi=document.createElement("li");
       var imgA=document.createElement("a");
       var imgNode=document.createElement("img");
       var imgH=document.createElement("h6");
-      imgH.innerHTML="Img "+i;
-      imgNode.setAttribute("src","imgs/repo/"+i+".jpg")
-      imgA.setAttribute("href","imgs/repo/"+i+".jpg")
+      imgH.innerHTML=titlearr[i][0];
+      imgNode.setAttribute("src","imgs/repo/"+i+".jpg");
+      imgA.setAttribute("href","imgs/repo/"+i+".jpg");
+      imgA.setAttribute("title",titlearr[i][0]+" - "+titlearr[i][1]);
       imgA.appendChild(imgNode);
       imgLi.appendChild(imgA);
       imgLi.appendChild(imgH);
