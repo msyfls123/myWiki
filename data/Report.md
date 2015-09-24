@@ -25,7 +25,7 @@
 
 直接提取天猫的项目列表页进行分析看来是行不通的了，那只能在加载完页面后进行提取。故选择所有浏览器都用的开发者工具（按`F12`进入，选择`Console`标签卡），使用Javascript直接获取加载完的页面元素，在`Console`上显示结果。
 
-####Javascript抓取天猫商城内干衣机的商品数据
+####Javascript抓取数据
 
 1. 在淘宝首页搜索关键词`干衣机`，在打开页面内选择`天猫`标签页,进入列表页后按`F12`进入到`Console`内
 2. 复制<a href="javascript:$('html,body').animate({scrollTop: $('#codeT').offset().top}, 1000);">代码</a>并粘贴到`Console`内，单击`Enter`
@@ -33,7 +33,7 @@
 
 __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript代码文件](store/tmall_js/test.js)
 
-#####主要特点:
+#####主要特点
 
 1. 将天猫上搜索得到的商品数据快速汇总，无需重复手工复制粘贴
 2. 绕开了阿里巴巴的反爬虫程序……在页面加载完成后对页面数据进行提取，一次可提取40条信息，比直接抓取略费时一点
@@ -58,8 +58,8 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 ![价格与销量趋势](imgs/survey2.jpg)
 
 <span id="csvId"></span>
-####天猫商城干衣机销量前20名：
-#####数据已经过Excel整理，各项信息为笔者采集时所录，不保证其时效性
+####天猫干衣机前20名列表
+数据已经过Excel整理，各项信息为笔者采集时所录，不保证其时效性
 <table id="csvText">
     <th>商品名</th>
     <th>价格</th>
@@ -84,7 +84,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 </script>
 
 <span id="codeT"></span>
-#####__代码如下：__
+####__代码__
 	
 	//读取商品价格
 	price=document.getElementsByTagName('strong')
@@ -126,15 +126,47 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 		listTotal.push(list4[i])
 	}
 	console.log(listTotal.join(","))
-	
-###设计案例展示
+
+###产品众筹部分
+>酒香就怕巷子深
+
+俗话说酒香不怕巷子深，但这句话在当今的社会早就是不适用的了。人人都在使劲推广自家的产品和服务，让设计走出去成为当下必然的选择。
+
+![greenreal](imgs/greenreal-01.jpg)
+
+要问2014年互联网最火的是什么？当然是众筹。众筹，通俗地讲，就是预先把产品信息告诉潜在的消费者，消费者可以预购即将量产的产品，这样既给产品制造方提供了订单的保证，又有效减少了前期投资的风险。
+
+![greenreal](imgs/greenreal-02.jpg)
+
+####众筹页面展示
+我们公司出品的绿真超能饮食净化器，采用臭氧杀菌消毒技术，可以有效去除食物表面农药残留及微生物细菌等，现正式上市前，需要在网络上进行众筹试探市场反应。实习期间主要配合策划人员设计并实现相关产品展示页面.
+
+![greenreal](imgs/greenreal-03.jpg)
+
+经过一番调查，发现众筹的产品大多有自己的特色，并把特色作为主要方面进行突出展示。而我们公司的产品主打的是健康牌，故需要用一些比较卡通的场景进行带入。
+
+![greenreal](imgs/greenreal-04.jpg)
+
+这里运用了情感化设计的方法，将臭氧杀菌的过程拟人化、卡通化，以达到取悦消费者的需求，增进消费者对产品的喜爱度。各种精致的实物展示图则是获取消费者的信任感，提升他们对于产品的认同度。当然，最后消费者的感受能否转化成实际的购买力，那就要看产品的定位与消费者的实际消费水平的均衡，这也就是众筹的目的所在。
+
+
+####饮食净化器宣传
+<iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/2Ra6kSQR" style="padding:20px 153px;background-color: #0EB7DC;background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
+
+###总结
+实习尚未结束，正在进行的还有尚致自身官网的建设以及微营销的宣传，期待将更多新颖的技术引入到设计及设计的推广之中。谢谢！
+
+下面是我的部分设计作品展示，由于经验和能力所致，作品尚不成熟，希请各位指正。
+
+
+###附录-设计案例展示
 <ul id="flow-box">
 
 </ul>
 
 <!-- 添加图片 -->
 <script type="text/javascript">
-  for (var i = 1; i <= 28; i++) {
+  for (var i = 1; i <= 33; i++) {
       var imgLi=document.createElement("li");
       var imgA=document.createElement("a");
       var imgNode=document.createElement("img");
@@ -221,28 +253,32 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 </script>
 
 
-####网站首页banner展示
+#####网站首页banner展示
 
 <iframe src="store/banner/demo.html" style="width:628px;height:310px;display:block;border: 1px solid #aaa;border-radius: 10px;" scrolling="no"></iframe>
 
-####鼠标悬浮切换背景
+#####鼠标悬浮切换背景
 
 <iframe src="store/quarter/quarter.html" width=628 height=300 frameBorder="0" style="padding:20px 0px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px" scrolling="no"></iframe>
 
 
 
-####尚致设计-易企秀
+#####尚致设计-易企秀
 
 <iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/xhJv1aEi" style="padding:20px 153px;background-color: #0EB7DC;
     background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
 
-####尚致设计-微官网
+#####尚致设计-微官网
 <iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;background-color: #0EB7DC;background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
 
-####美的透明展示屏
+#####美的透明展示屏
 <div style="margin:0 62px;padding:10px 10px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;">
 	<embed id="" height="482" allowscriptaccess="never" style="visibility:visible;" pluginspage="http://get.adobe.com/cn/flashplayer/" flashvars="playMovie=true&amp;auto=1&amp;autostart=true" width="482" allowfullscreen="true" quality="high" src="http://www.miaopai.com/show/eINtArQJmpUwonu3vMROag__.swf" type="application/x-shockwave-flash" wmode="transparent">
 </div>
+
+这是我们参观美的时所拍下的一段视频，其中显示屏幕是透明的，透过画面可以直接看到其后的实物模型，整个屏幕就像不存在一样。这种展示方式当下看来还是比较新颖的，但在不久的将来，肯定会成为一大趋势。那时，科技会让生活更美好。
+
+2015.9 作于佛山顺德
 
 <!-- d3读取csv测试 -->
 <!-- <div id="csv"></div>
@@ -260,3 +296,26 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 });  
 </script> -->
 <!-- 测试结束 -->
+
+<style type="text/css">
+#quickLink{position: absolute;left: -200px;top: 605px;width: 200px;background-color: #f7f7f7;font-size: 13px;color: #888;border-left: 3px solid #87E5EF;visibility: hidden;}
+#quickLink p{text-align: center;background: #e0e0e0;font-weight: bold;font-size: 16px;}
+#quickLink ul {list-style: none;color: #999;padding: 10px 0 0 30px;}
+#quickLink ul li:hover{color: #39c;cursor: pointer;text-indent: -11px;}
+#quickLink ul li:hover:before{content:"¶  "}
+#quickLink ul li{line-height: 20px;}
+#quickLink ul li.s{list-style: none;font-weight:bold;color: #666}
+#quickLink ul li.s:hover{color: #39c;cursor: pointer;}
+#quickLink ul li.ss{list-style: none;color: #777}
+#quickLink ul li.ss:hover{color: #39c;cursor: pointer;}
+#quickLink ul li.get{color: #39c;text-indent: -12px;}
+#quickLink ul li.get:before{content:"¶  "}
+
+</style>
+
+<div id="quickLink">
+  <ul>
+  </ul>
+</div>
+
+<script src="files/js/scrollTab.js"></script>
