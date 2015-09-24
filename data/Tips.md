@@ -33,3 +33,8 @@ result:
 `git commit -m "description"` 保存改动
 
 `git push oripin gh-pages` 上传改动
+
+###LaTeX使用xeLaTeX编译
+在首行插入`%!TEX program = xelatex` 即可使用xeLaTeX进行编译
+
+`cmd`命令行下输入`fc-list :lang=zh-cn`可以查询所有安装的中文字体
