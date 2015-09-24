@@ -152,7 +152,8 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 [众筹网演示页面](http://www.zhongchou.com/deal-show/id-195967)
 
 ####饮食净化器宣传
-<iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/2Ra6kSQR" style="padding:20px 153px;background-color: #0EB7DC;background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
+< 可操作 —— 拖拽页面 >
+<iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/2Ra6kSQR" style="padding:20px 153px;background-color: #0EB7DC;;"></iframe>
 
 ###总结
 实习尚未结束，正在进行的还有尚致自身官网的建设以及微营销的宣传，期待将更多新颖的技术引入到设计及设计的推广之中。谢谢！
@@ -304,12 +305,12 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 
 
 #####尚致设计-易企秀
-
-<iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/xhJv1aEi" style="padding:20px 153px;background-color: #0EB7DC;
-    background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
+< 可操作 —— 拖拽页面 >
+<iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/xhJv1aEi" style="padding:20px 153px;border:1px solid #ddd;"></iframe>
 
 #####尚致设计-微官网
-<iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;background-color: #0EB7DC;background-image: linear-gradient(135deg, #34DCAD, #0EB7DC);"></iframe>
+< 可操作 —— 点击页面图标 >
+<iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;border:1px solid #ddd;"></iframe>
 
 #####美的透明展示屏
 <div style="margin:0 62px;padding:10px 10px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;">
