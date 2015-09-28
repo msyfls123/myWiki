@@ -116,17 +116,18 @@ body>#main #content .img-box img {
 	max-width: 100%;
 }
 body>#main #content blockquote {
-	background: url(../../imgs/quotel.gif) no-repeat 2px 4px;
+	background:#66a366 url(../../imgs/quotel.png) no-repeat 30px 10px;
 	font-size: 16px;
-	padding: 10px 20px 0 20px;
+	padding: 10px 20px 10px 50px;
 	border-left: none;
-	color: #66a366;
+	border-right: 15px solid #4D9660;
+	color: #fff;
 }
 
 body>#main #content blockquote p:last-child{
 	display: inline;
 	padding: 0 16px 0 0;
-	background: url(../../imgs/quoter.gif) no-repeat right center
+	background: url(../../imgs/quoter.png) no-repeat right center
 }
 
 body>#main #content blockquote>blockquote {
