@@ -191,11 +191,11 @@ body>#main h5:before
 /*报告页面特有*/
 #flow-box { position: relative; max-width: 628px;background: #f2f2f2;}
 #flow-box li { position: absolute; background: #fff; border: solid 1px #ccc; text-align: center; padding: 8.5px; left: 0px; top: 0; list-style: none;}
-#flow-box li:hover {border: solid 1px #0EB7DC;border-radius:6px;box-shadow: 0px 0px 0px 0.5px #0EB7DC;margin-top: -3px;}
+#flow-box li:hover {border: solid 1px #39C;border-radius:4px;margin-top: -2px;background-color: #3be;color: #fff;}
 #flow-box h3 { padding-top: 8px; }
 #flow-box img { width: 180px; height: auto; display: block; border: 0;}
     /*css3动画*/
-#flow-box li { -webkit-transition: all .4s ease-out .1s; -moz-transition: all .4s ease-out; -o-transition: all .4s ease-out .1s; transition: all .4s ease-out .1s }
+#flow-box li { -webkit-transition: all .2s ease-out .1s; -moz-transition: all .2s ease-out; -o-transition: all .2s ease-out .1s; transition: all .2s ease-out .1s }
 
 #quickLink{position: absolute;left: -200px;top: 605px;width: 200px;background-color: #f7f7f7;font-size: 13px;color: #888;border-left: 3px solid #87E5EF;visibility: hidden;}
 #quickLink p{text-align: center;background: #e0e0e0;font-weight: bold;font-size: 16px;}
