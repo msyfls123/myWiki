@@ -203,10 +203,15 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
     ["某品牌企业招贴画","树的叠影，体现成长"],
     ["某品牌企业招贴画","一群大雁，体现团结的力量"],
     ["某品牌企业招贴画","撑杆跳，体现飞翔的感觉"],
-
+    ["企业愿景","成为行业知名上市企业"],
+    ["企业文化","勤劳 朴实 诚信 共赢"],
+    ["合作伙伴","诚信服务 共赢未来"],
+    ["质量方针","不接受不良品  不生产不良品  不放行不良品"],
+    ["做事原则","有所为 有所不为"],
+    ["团队精神","孤军奋战 其力有限 众志成城 坚不可摧"]
   ]
 
-  for (var i = 1; i <= 33; i++) {
+  for (var i = 1; i <= 39; i++) {
       var imgLi=document.createElement("li");
       var imgA=document.createElement("a");
       var imgNode=document.createElement("img");
@@ -308,9 +313,9 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 < 可操作 —— 拖拽页面 >
 <iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/xhJv1aEi" style="padding:20px 153px;border:1px solid #ddd;"></iframe>
 
-#####尚致设计-微官网
+<!-- #####尚致设计-微官网
 < 可操作 —— 点击页面图标 >
-<iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;border:1px solid #ddd;"></iframe>
+<iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;border:1px solid #ddd;"></iframe> -->
 
 #####美的透明展示屏
 <div style="margin:0 62px;padding:10px 10px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;">
