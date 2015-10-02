@@ -21,10 +21,10 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 				var scroH = $(this).scrollTop();
 				if(scroH>=quickH){
 					$("#backTop").fadeIn(1000);
-					$("#quickLink").css({"position":"fixed","top":"45px","left":"50%","margin-left":"-590px","visibility":"visible"});
+					$("#quickLink").css({"position":"fixed","top":"75px","left":"50%","margin-left":"-590px","visibility":"visible"});
 				}else if(scroH<quickH){
 					$("#backTop").fadeOut(500);
-					$("#quickLink").css({"position":"absolute","top":"605px","left":"-200px","margin-left":"0px","visibility":"hidden"});
+					$("#quickLink").css({"position":"absolute","top":"635px","left":"-200px","margin-left":"0px","visibility":"hidden"});
 				}
 			};
 

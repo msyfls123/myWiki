@@ -28,8 +28,8 @@
 ####Javascript抓取数据
 
 1. 在淘宝首页搜索关键词`干衣机`，在打开页面内选择`天猫`标签页,进入列表页后按`F12`进入到`Console`内
-2. 复制<a href="javascript:$('html,body').animate({scrollTop: $('#codeT').offset().top}, 1000);">代码</a>并粘贴到`Console`内，单击`Enter`
-3. 如果顺利的话（不顺利的话就算了吧），可以看到商品信息（包括商品名、店铺名，销量和价格）都会显示在`Console`内，只需要`Ctrl+C``Ctrl+V`到记事本里，并保存为`*.csv`文件，就可以在Excel里进行各种<a href="javascript:$('html,body').animate({scrollTop: $('#csvId').offset().top}, 1000);">数据处理</a>。
+2. 复制<a data-toggle="tooltip" title="跳转到代码部分" href="javascript:$('html,body').animate({scrollTop: $('#codeT').offset().top}, 1000);">代码</a>并粘贴到`Console`内，单击`Enter`
+3. 如果顺利的话（不顺利的话就算了吧），可以看到商品信息（包括商品名、店铺名，销量和价格）都会显示在`Console`内，只需要`Ctrl+C``Ctrl+V`到记事本里，并保存为`*.csv`文件，就可以在Excel里进行各种<a data-toggle="tooltip" title="跳转到数据处理部分部分" href="javascript:$('html,body').animate({scrollTop: $('#csvId').offset().top}, 1000);">数据处理</a>。
 
 __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript代码文件](store/tmall_js/test.js)
 
@@ -40,7 +40,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 3. 所得数据可以直接保存为csv文件在Excel中打开
 
 ####数据分析
-有了数据之后我们可以做很多事，比如分析商品价格和销量的关系，商品颜色的差异性，色调风格与价格销量的关系等等。现在也有很多种工具帮助实现数据的可视化，这将是我在接下来的实习工作中重点研究的方向。这里是<a href="javascript:$('html,body').animate({scrollTop: $('#imgAna').offset().top}, 1000);">在PPT内完成的简单分析</a>。
+有了数据之后我们可以做很多事，比如分析商品价格和销量的关系，商品颜色的差异性，色调风格与价格销量的关系等等。现在也有很多种工具帮助实现数据的可视化，这将是我在接下来的实习工作中重点研究的方向。这里是<a data-toggle="tooltip" title="跳转到分析部分" href="javascript:$('html,body').animate({scrollTop: $('#imgAna').offset().top}, 1000);">在PPT内完成的简单分析</a>。
 
 #####干衣机市场概况
 1. 价格区间位于100至200间的产品占总量的90%以上
@@ -49,7 +49,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 4. 纯色、条纹和简单图案的销量均很高，体现大众对于简洁图案的喜爱，但不可忽视的是复杂图案和场景有着丰富的种类很多，可以满足不同消费者的需要
 5. 简单图案，条纹和纯色销量差异性较大，可以针对特殊群体进行优化以达到高销量，而复杂图案销量不一，说明其受众较为普遍
 
-有了比较详细的市场喜好数据后，设计就变得有目标，有方向了很多，可以针对不同目标群体来优化<a href="javascript:$('html,body').animate({scrollTop: $('#flow-box').offset().top}, 1000);">其后的设计</a>。
+有了比较详细的市场喜好数据后，设计就变得有目标，有方向了很多，可以针对不同目标群体来优化<a data-toggle="tooltip" title="跳转到设计案例" href="javascript:$('html,body').animate({scrollTop: $('#flow-box').offset().top}, 1000);">其后的设计</a>。
 
 <span id="imgAna"></span>
 #####色彩趋势分析
@@ -220,6 +220,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
       imgNode.setAttribute("src","imgs/repo/"+i+".jpg");
       imgA.setAttribute("href","imgs/repo/"+i+".jpg");
       imgA.setAttribute("title",titlearr[i][0]+" - "+titlearr[i][1]);
+      imgA.setAttribute("class","flow-img");
       imgA.appendChild(imgNode);
       imgLi.appendChild(imgA);
       imgLi.appendChild(imgH);
@@ -324,7 +325,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 
 这是我们参观美的时所拍下的一段视频，其中显示屏幕是透明的，透过画面可以直接看到其后的实物模型，整个屏幕就像不存在一样。这种展示方式当下看来还是比较新颖的，但在不久的将来，肯定会成为一大趋势。那时，科技会让生活更美好。
 
-2015.9 作于佛山顺德
+_2015.9 作于佛山顺德_
 
 <!-- d3读取csv测试 -->
 <!-- <div id="csv"></div>
@@ -352,5 +353,12 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
   <ul>
   </ul>
 </div>
-<div id="backTop"></div>
+<div id="backTop" data-toggle="tooltip" title="飞" ></div>
 <script src="files/js/scrollTab.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+    $('body>#main #content a').not(".flow-img").tooltip({placement:"top",title:"不知道是什么东西，点我试一下吧"})
+    $('body>#main #content div#backTop').tooltip({placement:"right"})
+  })
+</script>
