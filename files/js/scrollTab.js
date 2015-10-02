@@ -41,7 +41,7 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 
 			function scrollEvent6(){            //固定右侧quickLink
 				var scroH = $(this).scrollTop();
-				if(scroH>0){
+				if(scroH>301){
 					$("#header").addClass("scroll");
 					$('#header h1').tooltip({placement:"left"})
 				}else {
