@@ -344,10 +344,7 @@ _2015.9 作于佛山顺德_
 </script> -->
 <!-- 测试结束 -->
 
-<style type="text/css">
 
-
-</style>
 
 <div id="quickLink">
   <ul>

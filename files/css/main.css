@@ -19,13 +19,16 @@ body>#header {
 	background-color: #234;
 	width: 100%;
 	height: 300px;
-	padding-top: 50px;
+	margin-top: -20px;
+	padding-top: 70px;
 	color: #EFEFEF;
 	overflow: hidden;
+	/*-webkit-transition: all .3s ease-out .1s; -moz-transition: all .3s ease-out; -o-transition: all .3s ease-out .1s; transition: all .3s ease-out .1s */
 }
 
 body>#header img{
 	border: 3px solid #efefef;
+	 -webkit-transition: all .5s ease-out .1s; -moz-transition: all .5s ease-out; -o-transition: all .5s ease-out .1s; transition: all .5s ease-out .1s 
 }
 
 body>#header a:first-child {
@@ -49,7 +52,7 @@ body>#header h1 {
 	font-weight: 300;
 	font-style: normal;
 	font-family: sans-serif !important;
-	-webkit-transition: all .4s ease-out .1s; -moz-transition: all .4s ease-out; -o-transition: all .4s ease-out .1s; transition: all .4s ease-out .1s
+	/*-webkit-transition: all .4s ease-out .1s; -moz-transition: all .4s ease-out; -o-transition: all .4s ease-out .1s; transition: all .4s ease-out .1s*/
 }
 body>#header h1:hover{color:#EFEFEF;}
 body>#main {
@@ -230,3 +233,44 @@ body>#main h5:before
 
 #backTop{display:none;position:fixed;width:40px;height:40px;bottom:60px;left:50%;margin-left:520px;background: url(../../imgs/backtop.png) no-repeat 0px 0px;opacity: 0.65}
 #backTop:hover{cursor: pointer;opacity: 1}
+
+body>#header.scroll {
+	position: fixed;
+	background-color: #234;
+	width: 100%;
+	height: 80px;
+	padding-top: 0px;
+	margin-top: -35px;
+	color: #EFEFEF;
+	overflow: visible;
+	z-index: 1000;
+}
+
+body>#header.scroll img{
+	width: 60px;
+	border: 2px solid #efefef;
+	border-radius: 50%;
+}
+
+body>#header.scroll img:hover{
+	border: 2px solid #39c;
+}
+
+body>#header.scroll a:first-child {
+	position: relative;
+	left: 0;
+	width: 60px;
+	margin: 40px 0 0 55px;
+
+}
+
+body>#header.scroll a:nth-child(2) {
+	display: block;
+	float: right;
+}
+
+body>#header.scroll h1 {
+	text-align: right;
+	/*line-height: 84px;*/
+	margin: -55px 20px;
+}

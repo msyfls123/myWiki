@@ -38,7 +38,19 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 					}
 				};
 			};
-			$(window).scroll(function(){scrollEvent4();scrollEvent5()});   //注册固定导航栏事件
+
+			function scrollEvent6(){            //固定右侧quickLink
+				var scroH = $(this).scrollTop();
+				if(scroH>0){
+					$("#header").addClass("scroll");
+					$('#header h1').tooltip({placement:"left"})
+				}else {
+					$("#header").removeClass("scroll");
+					$('#header h1').tooltip({placement:"bottom"})
+				}
+			};
+
+			$(window).scroll(function(){scrollEvent4();scrollEvent5();scrollEvent6()});   //注册固定导航栏事件
 
 			$("#backTop").click(function(){ 
 			$('body,html').animate({scrollTop:"0px"}, 1000); return false;
