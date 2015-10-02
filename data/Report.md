@@ -358,7 +358,7 @@ _2015.9 作于佛山顺德_
 
 <script type="text/javascript">
   $(function() {
-    $('body>#main #content a').not(".flow-img").tooltip({placement:"top",title:"不知道是什么东西，点我试一下吧"})
+    $('body>#main #content a').not(".flow-img").tooltip({placement:"top",title:"不知道是什么，点我试一下吧"})
     $('body>#main #content div#backTop').tooltip({placement:"right"})
   })
 </script>
