@@ -29,9 +29,56 @@
 
 1. 在淘宝首页搜索关键词`干衣机`，在打开页面内选择`天猫`标签页,进入列表页后按`F12`进入到`Console`内
 2. 复制<a data-toggle="tooltip" title="跳转到代码部分" href="javascript:$('html,body').animate({scrollTop: $('#codeT').offset().top}, 1000);">代码</a>并粘贴到`Console`内，单击`Enter`
-3. 如果顺利的话（不顺利的话就算了吧），可以看到商品信息（包括商品名、店铺名，销量和价格）都会显示在`Console`内，只需要`Ctrl+C``Ctrl+V`到记事本里，并保存为`*.csv`文件，就可以在Excel里进行各种<a data-toggle="tooltip" title="跳转到数据处理部分部分" href="javascript:$('html,body').animate({scrollTop: $('#csvId').offset().top}, 1000);">数据处理</a>。
+3. 如果顺利的话（不顺利的话就算了吧），可以看到商品信息（包括商品名、店铺名，销量和价格）都会显示在`Console`内，只需要`Ctrl+C``Ctrl+V`到记事本里，并保存为`*.csv`文件，就可以在Excel里进行各种<a data-toggle="tooltip" title="跳转到数据处理" href="javascript:$('html,body').animate({scrollTop: $('#csvId').offset().top}, 1000);">数据处理</a>。
+
+<span id="codeT"></span>
+####__代码__
+  
+    //读取商品价格
+    price=document.getElementsByTagName('strong');
+    var list=new Array();
+    for(i=2;i<=price.length-1;i++){list.push(price[i].innerHTML)};
+
+    //读取店铺名称
+    shop=document.getElementsByClassName('shopname J_MouseEneterLeave J_ShopInfo');
+    var list2=new Array();
+    for(k=0;k<=shop.length-1;k++){list2[k]=shop[k].childNodes[3].innerHTML};
+
+    //读取商品名称
+    nameP=document.getElementsByClassName('row row-2 title');
+    var list3=new Array();
+    for(k=0;k<=nameP.length-1;k++){list3[k]=nameP[k].textContent.replace(/\s+/g, "")};
+
+    //读取商品页面地址
+    URL=document.getElementsByClassName('J_U2IStat');
+    var list4=new Array();
+    for(i=0;i<=URL.length/2-1;i++){list4[i]=URL[2*i].href};
+
+    //读取购买人数
+    buyer=document.getElementsByClassName('deal-cnt');
+    var list5=new Array();
+    for(i=0;i<=buyer.length-1;i++){list5[i]=buyer[i].textContent.slice(0,-3) };
+
+    //输出成数据
+    var listTotal=new Array();
+    for (var i = 0; i <= list.length-1; i++) {
+      listTotal.push("\n"+list3[i]);
+      listTotal.push(list[i]);
+      listTotal.push(list5[i]);
+      listTotal.push(list2[i]);
+      listTotal.push(list4[i]);
+    }
+    console.log(listTotal.join(","));
 
 __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript代码文件](store/tmall_js/test.js)
+
+#####*简易版本
+
+![更改书签](imgs/EditBookmark.jpg)
+
+不会打开`Console`，嫌复制粘贴麻烦？试试复制以下代码并保存为浏览器的一个书签，操作方式如上图所示。之后就可以在搜索页面点击这个书签，便可弹出带有商品信息的对话框。加入书签之后可以拿[`这个网址`](https://s.taobao.com/search?q=%E5%B9%B2%E8%A1%A3%E6%9C%BA&tab=mall)试一下。
+
+    javascript: ( function (){price=document.getElementsByTagName('strong');var list=new Array();for(i=2;i<=price.length-1;i++){list.push(price[i].innerHTML)};shop=document.getElementsByClassName('shopname J_MouseEneterLeave J_ShopInfo');var list2=new Array();for(k=0;k<=shop.length-1;k++){list2[k]=shop[k].childNodes[3].innerHTML};nameP=document.getElementsByClassName('row row-2 title');var list3=new Array();for(k=0;k<=nameP.length-1;k++){list3[k]=nameP[k].textContent.replace(/\s+/g, "")};URL=document.getElementsByClassName('J_U2IStat');var list4=new Array();for(i=0;i<=URL.length/2-1;i++){list4[i]=URL[2*i].href};buyer=document.getElementsByClassName('deal-cnt');var list5=new Array();for(i=0;i<=buyer.length-1;i++){list5[i]=buyer[i].textContent.slice(0,-3) };var listTotal=new Array();for (var i = 0; i <= list.length-1; i++) {listTotal.push("\n"+list3[i]);listTotal.push(list[i]);listTotal.push(list5[i]);listTotal.push(list2[i]);listTotal.push(list4[i]);};alert(listTotal.join(","));})();
 
 #####主要特点
 
@@ -83,49 +130,6 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
     });
 </script>
 
-<span id="codeT"></span>
-####__代码__
-	
-	//读取商品价格
-	price=document.getElementsByTagName('strong')
-	var list=new Array()
-	for(i=2;i<=price.length-1;i++){list.push(price[i].innerHTML)}
-	//console.log(list.join(",\n"))
-
-	//读取店铺名称
-	shop=document.getElementsByClassName('shopname J_MouseEneterLeave J_ShopInfo')
-	var list2=new Array()
-	for(k=0;k<=shop.length-1;k++){list2[k]=shop[k].childNodes[3].innerHTML}
-	//console.log(list2.join(",\n"))
-
-	//读取商品名称
-	nameP=document.getElementsByClassName('row row-2 title')
-	var list3=new Array()
-	for(k=0;k<=nameP.length-1;k++){list3[k]=nameP[k].textContent.replace(/\s+/g, "")}
-	//console.log(list3.join(",\n"))
-
-	//读取商品页面地址
-	URL=document.getElementsByClassName('J_U2IStat')
-	var list4=new Array()
-	for(i=0;i<=URL.length/2-1;i++){list4[i]=URL[2*i].href}
-	//console.log(URL)
-
-	//读取购买人数
-	buyer=document.getElementsByClassName('deal-cnt')
-	var list5=new Array()
-	for(i=0;i<=buyer.length-1;i++){list5[i]=buyer[i].textContent.slice(0,-3) }
-	//console.log(list5.join(",\n"))
-
-	//输出成数据
-	var listTotal=new Array()
-	for (var i = 0; i <= list.length-1; i++) {
-		listTotal.push("\n"+list3[i])
-		listTotal.push(list[i])
-		listTotal.push(list5[i])
-		listTotal.push(list2[i])
-		listTotal.push(list4[i])
-	}
-	console.log(listTotal.join(","))
 
 ###产品众筹部分
 >酒香还怕巷子深
