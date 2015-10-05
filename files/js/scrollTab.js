@@ -14,9 +14,8 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 					$('html, body').animate({scrollTop: $("h3,h4,h5").eq(i).offset().top-10}, 1000); return false;
 				})
 			})
-
-			var quickH = $("#quickLink").offset().top;
-
+			var quickH = 600;
+			
 			function scrollEvent4(){            //固定右侧quickLink
 				var scroH = $(this).scrollTop();
 				if(scroH>=quickH){
