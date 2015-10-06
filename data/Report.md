@@ -157,7 +157,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 
 ####饮食净化器宣传
 < 可操作 —— 拖拽页面 >
-<iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/2Ra6kSQR" style="padding:20px 153px;background-color: #0EB7DC;;"></iframe>
+<iframe frameborder = "0" src="http://eqxiu.com/s/2Ra6kSQR" style="width:27.13rem;height:52.25rem;position:relative;left:50%;margin:1rem 0 1rem -13.565rem;border:2px solid #234;border-radius:18px;"></iframe>
 
 ###总结
 实习尚未结束，正在进行的还有尚致自身官网的建设以及微营销的宣传，期待将更多新颖的技术引入到设计及设计的推广之中。谢谢！
@@ -246,7 +246,8 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
     var li_W = li[0].offsetWidth+margin;//取区块的实际宽度（包含间距，这里使用源生的offsetWidth函数，不适用jQuery的width()函数是因为它不能取得实际宽度，例如元素内有pandding就不行了）
     function waterFlowImg(){//定义成函数便于调用
         var h=[];//记录区块高度的数组
-        var n = /*document.documentElement.offsetWidth*/628/li_W|0;//窗口的宽度除以区块宽度就是一行能放几个区块
+        var n = document.getElementById("flow-box").offsetWidth/li_W|0;//窗口的宽度除以区块宽度就是一行能放几个区块
+        // alert(n)
         for(var i = 0;i < li.length;i++) {//有多少个li就循环多少次
             li_H = li[i].offsetHeight;//获取每个li的高度
             if(i < n) {//n是一行最多的li，所以小于n就是第一行了
@@ -304,26 +305,26 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 </script>
 
 
-#####网站首页banner展示
+<!-- #####网站首页banner展示
 
-<iframe src="store/banner/demo.html" style="width:628px;height:310px;display:block;border: 1px solid #aaa;border-radius: 10px;" scrolling="no"></iframe>
+<iframe src="store/banner/demo.html" style="width:100%;height:200%;display:block;border: 1px solid #aaa;border-radius: 10px;zoom:50%" scrolling="no"></iframe>
 
 #####鼠标悬浮切换背景
 
-<iframe src="store/quarter/quarter.html" width=628 height=300 frameBorder="0" style="padding:20px 0px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px" scrolling="no"></iframe>
+<iframe src="store/quarter/quarter.html" width=628 height=300 frameBorder="0" style="padding:20px 0px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px" scrolling="no"></iframe> -->
 
 
 
 #####尚致设计-易企秀
 < 可操作 —— 拖拽页面 >
-<iframe width="628px" frameborder = "0" height="680px" src="http://eqxiu.com/s/xhJv1aEi" style="padding:20px 153px;border:1px solid #ddd;"></iframe>
+<iframe frameborder = "0" src="http://eqxiu.com/s/xhJv1aEi" style="width:27.13rem;height:52.25rem;position:relative;left:50%;margin:1rem 0 1rem -13.565rem;border:2px solid #234;border-radius:18px;"></iframe>
 
 <!-- #####尚致设计-微官网
 < 可操作 —— 点击页面图标 >
 <iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;border:1px solid #ddd;"></iframe> -->
 
 #####美的透明展示屏
-<div style="margin:0 62px;padding:10px 10px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;">
+<div style="width:502px;position:relative;left:50%;margin:0 -251px;padding:10px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;">
 	<embed id="" height="482" allowscriptaccess="never" style="visibility:visible;" pluginspage="http://get.adobe.com/cn/flashplayer/" flashvars="playMovie=true&amp;auto=1&amp;autostart=true" width="482" allowfullscreen="true" quality="high" src="http://www.miaopai.com/show/eINtArQJmpUwonu3vMROag__.swf" type="application/x-shockwave-flash" wmode="transparent">
 </div>
 
