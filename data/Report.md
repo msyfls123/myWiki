@@ -116,7 +116,6 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 </table>
 
 <!-- 调用csv文件生成表格 -->
-<script type="text/javascript" src="files/js/d3.min.js"></script>
 <script type="text/javascript">
   var data=d3.csv("store/tmall_js/top20.csv",function(error,csvdata){  
     if(error){  
@@ -280,7 +279,6 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 </script>
 
 <!-- 显示大图片 -->
-<script type="text/javascript" src="files/js/jquery.imgbox.js"></script>
 <script type="text/javascript">
         $(document).ready(function() {
             $("#flow-box li>a").imgbox({
