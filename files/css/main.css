@@ -51,7 +51,7 @@ body>#header h1 {
 	font-size: 1em;
 	font-weight: 300;
 	font-style: normal;
-	font-family: sans-serif !important;
+	font-family: "Segoe UI", Arial, freesans, sans-serif;
 	/*-webkit-transition: all .4s ease-out .1s; -moz-transition: all .4s ease-out; -o-transition: all .4s ease-out .1s; transition: all .4s ease-out .1s*/
 }
 body>#header h1:hover{color:#EFEFEF;}
@@ -268,7 +268,7 @@ body>#main h5:before
 @media (min-width: 992px){#quickLink.on{margin-left:-520px;}}
 @media (min-width: 1200px){#quickLink.on{margin-left:-590px;}}
 #quickLink:hover{opacity: 1}
-#quickLink p{text-indent: 30px;background: #123;font-weight: bold;font-size: 16px;}
+#quickLink p{text-align: center;background: #123;font-weight: bold;font-size: 16px;}
 #quickLink ul {list-style: none;color: #999;padding: 10px 0 0 30px;}
 #quickLink ul li:hover{color: #fff;cursor: pointer;text-indent: 2px;background: #1d2e3f;}
 /*#quickLink ul li:hover:before{content:"¶  "}*/
