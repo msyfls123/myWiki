@@ -88,6 +88,12 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 
 ####数据分析
 有了数据之后我们可以做很多事，比如分析商品价格和销量的关系，商品颜色的差异性，色调风格与价格销量的关系等等。现在也有很多种工具帮助实现数据的可视化，这将是我在接下来的实习工作中重点研究的方向。这里是<a data-toggle="tooltip" title="跳转到分析部分" href="javascript:$('html,body').animate({scrollTop: $('#imgAna').offset().top}, 1000);">在PPT内完成的简单分析</a>。
+<script type="text/javascript" src="files/js/highcharts.js"></script>
+<script type="text/javascript" src="files/js/highcharts-more.js"></script>
+<script type="text/javascript" src="files/js/data.js"></script>
+<script type="text/javascript" src="files/js/exporting.js"></script>
+<div id="container" style="max-width:800px; height:400px;margin:20px auto;border:3px solid #7CB5EC"></div>
+<script type="text/javascript" src="files/js/graphic.js"></script>
 
 #####干衣机市场概况
 1. 价格区间位于100至200间的产品占总量的90%以上
