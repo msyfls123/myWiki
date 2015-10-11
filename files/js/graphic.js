@@ -10,8 +10,11 @@
 
 			$('#container').highcharts({
 				chart: {
+					renderTo: "int",
 		            type: 'scatter',
 		            zoomType: 'xy',
+		            backgroundColor:'#012',
+		            spacing:[10,10,0,0]
 		        },
 		        data: {
 		        	name: '干衣机',
@@ -20,10 +23,10 @@
 		        },
 		        plotOptions:{
 		        	scatter:{
-		        		// color: '#669',
 		        		cropThreshold:300,
 		        		marker:{
-		        			radius:3		        			
+		        			radius:2,
+		        			fillColor: '#f00',		        			
 		        		},
 		        		dataLabels: {
 				            enabled: true,
@@ -34,12 +37,13 @@
 			            	style:{
 			            		fontSize:"8px",
 			            		fontWeight:"light",
-			            		color: "#777"
+			            		color: "#abc"
 			            	}
        					}
 		        	}
 		        },
 		        legend:{
+		        	enabled:true,
 		        	labelFormatter:function(){
 		        		return  ' 单款干衣机（销售总额）';
 		        	},
@@ -48,28 +52,38 @@
 		            verticalAlign: 'top',
 		            x: 0,
 		            y: 45,
+		            itemStyle:{
+		            	'fontSize':"9px",
+		            	color:'#aaa'
+		            }
 		        },
 		        title: {
-		            text: '天猫干衣机销售情况'
+		            text: 'Dryer Sales on Tmall',
+		            style:{
+		            	fontSize:'9px',
+		            	color:'#efefef'
+		            }
 		        },
 				yAxis: {
 					title: {
-						text: '销量/件'
+						text: 'Sales',
+						margin: 10
 					},
 					ceiling: 4000,
-					gridLineColor:"#ddd"
+					gridLineColor:"#345"
 				},
 				xAxis: {
 					title: {
-						text: '价格/元'
+						text: 'Price',
+						margin: 0
 					},
 					gridLineWidth:1,
-					gridLineColor:"#ddd"
+					gridLineColor:"#345"
 				},
 				tooltip: {
 					// headerFormat: shopName[Number(this.point.index)],
 					formatter:function(){
-						return '<b>'+shopName[this.point.index]+'</b><br><span>价格： </span><span style="color:#39c">'+this.point.x+'</span><br><span>销量： </span><span style="color:#39c">'+this.point.y+'</span><br><span>总价： </span><span style="color:#c03;font-weight:bold">'+this.point.y*this.point.x+'</span>'
+						return '<b>'+shopName[this.point.index]+'</b><br><span>价格： </span><span style="color:#17a">'+this.point.x+'</span><br><span>销量： </span><span style="color:#17a">'+this.point.y+'</span><br><span>总价： </span><span style="color:#c03;font-weight:bold">'+this.point.y*this.point.x+'</span>'
 					},
 					crosshairs: [{            // 设置准星线样式
 					    width: 1.5,
@@ -80,8 +94,7 @@
 					}],
 				},
 				credits:{
-					href: "http://msyfls123.github.io",
-					text: "msyfls123.github.io"
+					enabled:false
 				}
 			});
 		})
