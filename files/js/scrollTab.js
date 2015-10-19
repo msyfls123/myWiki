@@ -11,7 +11,7 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 			});
 			$("#quickLink li").each(function(i){      //点击quickLink跳转页面位置
 				$(this).click(function(){
-					$('html, body').animate({scrollTop: $("h3,h4,h5").eq(i).offset().top-10}, 1000); return false;
+					$('html, body').animate({scrollTop: $("h3,h4,h5").eq(i).offset().top-60}, 1000); return false;
 				})
 			})
 			var quickH = 600;
@@ -30,7 +30,7 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 			function scrollEvent5(){            //滑动到对应位置在quickLink显示
 				var scroH = $(this).scrollTop();
 				for (var i = 0; i <= $("#quickLink li").length - 1; i++) {
-					if((scroH>$("h3,h4,h5").eq(i).offset().top-30)&&(scroH<$("h3,h4,h5").eq(i+1).offset().top-30)){
+					if((scroH>$("h3,h4,h5").eq(i).offset().top-61)&&(scroH<$("h3,h4,h5").eq(i+1).offset().top-61)){
 						$("#quickLink li:eq("+i+")").addClass("get");
 					}else{
 						$("#quickLink li:eq("+i+")").removeClass("get");
