@@ -3,6 +3,7 @@ body{
 	font-family: Arial, 'Microsoft YaHei';
 	font-size: 16px;
 	line-height: 1.8em;
+	color:#414243;
 }
 a {
 	text-decoration: none;
@@ -232,17 +233,26 @@ body>#main td:nth-child(even) {
 }*/
 
 body>#main h1,h2,h3,h4,h5{
-	font-weight: bold;
+	font-weight: 300;
+	font-family: 'Open Sans','Helvetica Neue',Arial,'Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei',sans-serif;
+	color:#414243;
 }
 
 body>#main{counter-reset:section;}
 body>#main h3{counter-reset:subsection;}
 body>#main h4{counter-reset:subsubsection;}
 
+body>#main h3:before,body>#main h4:before,body>#main h5:before{
+	color: #fff;
+	background: #414243;
+	padding-left: 7px;
+	margin-right: 5px;
+}
+
 body>#main h3:before
 {
 	counter-increment:section;
-	content: counter(section) ". ";
+	content: counter(section) " ";
 }
 
 body>#main h4:before
