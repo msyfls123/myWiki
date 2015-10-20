@@ -6,6 +6,7 @@ Because it is there
 
 ###笔记###
 + [软件使用小技巧](Tips)
++ [Python操作](Python)
 
 ###明日之事早打算###
 
