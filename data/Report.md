@@ -327,34 +327,19 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 < 可操作 —— 点击页面图标 >
 <iframe width="628px" frameborder = "0" height="568px" src="http://wx.budray.com/index.php?g=Wap&m=Index&a=index&token=rnfzfk1423274632" style="padding:20px 140px;border:1px solid #ddd;"></iframe> -->
 
+<style type="text/css">
+  @media (max-width: 42em){#mediaPlay{display: none;}}
+</style>
+
 #####美的透明展示屏
-<div style="width:502px;position:relative;left:50%;margin:0 -251px;padding:10px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;">
+<div style="width:502px;position:relative;left:50%;margin:0 -251px;padding:10px;background:#EFEFEF;border: 1px solid #ccc;border-radius: 4px;" id="mediaPlay">
 	<embed id="" height="482" allowscriptaccess="never" style="visibility:visible;" pluginspage="http://get.adobe.com/cn/flashplayer/" flashvars="playMovie=true&amp;auto=1&amp;autostart=true" width="482" allowfullscreen="true" quality="high" src="http://www.miaopai.com/show/eINtArQJmpUwonu3vMROag__.swf" type="application/x-shockwave-flash" wmode="transparent">
 </div>
-
+[视频链接](http://www.miaopai.com/show/eINtArQJmpUwonu3vMROag__.swf)
 这是我们参观美的时所拍下的一段视频，其中显示屏幕是透明的，透过画面可以直接看到其后的实物模型，整个屏幕就像不存在一样。这种展示方式当下看来还是比较新颖的，但在不久的将来，肯定会成为一大趋势。那时，科技会让生活更美好。
 
 _2015.9_
 _作于佛山顺德_
-
-<!-- d3读取csv测试 -->
-<!-- <div id="csv"></div>
-
-<script type="text/javascript" src="files/js/d3.min.js"></script>
-
-<script type="text/javascript">
-	d3.csv("store/tmall_js/data2.csv",function(error,csvdata){  
-  
-    if(error){  
-        console.log(error);  
-    }  
-    console.log(csvdata);  
-    d3.select("p#csv").append(csvdata[0])
-});  
-</script> -->
-<!-- 测试结束 -->
-
-
 
 <div id="quickLink">
   <ul>
