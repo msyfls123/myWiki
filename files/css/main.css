@@ -345,3 +345,24 @@ body>#header.scroll h1 {
 	font-size: 0.8em;
 	margin: -60px 20px;
 }
+
+.ds-thread{
+	border-top: 2px solid #fff;
+	background: #fff;
+	margin: -1px 1px 1px 1px;
+}
+
+@media screen and (min-width: 64em) {
+  body>#main .ds-thread {
+	padding: 10px 6rem;
+    } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  body>#main .ds-thread {
+	padding: 10px 4rem;
+	} }
+
+@media screen and (max-width: 42em) {
+  body>#main .ds-thread {
+	padding: 10px 1rem;
+    } }

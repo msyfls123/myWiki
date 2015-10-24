@@ -122,6 +122,12 @@
 						if(pagetitle != ""){
 							$("title").text(pagetitle + " - Kimi's Wiki");
 						}
+
+						$(".ds-thread").attr({
+								"data-thread-key":window.location.pathname+window.location.search,
+								"data-title":$("#content").find(":header:first").text(),
+								"data-url":window.location.href
+						})
 					}
 				});
 			});
@@ -152,9 +158,35 @@
 						<h2>Loading………</h2>
 						<p>如看到此行文字超过15秒，请检查网络链接，并升级至Chrome/Firefox/IE9以上浏览器</p>
 					</div>
+
+					<!-- 多说评论框 start -->
+					<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+					<!-- 多说评论框 end -->
+					<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+					<script type="text/javascript">
+					var duoshuoQuery = {short_name:"msyfls123wiki"};
+						(function() {
+							var ds = document.createElement('script');
+							ds.type = 'text/javascript';ds.async = true;
+							ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+							ds.charset = 'UTF-8';
+							(document.getElementsByTagName('head')[0] 
+							 || document.getElementsByTagName('body')[0]).appendChild(ds);
+						})();
+						</script>
+						<script type="text/javascript">
+							$(".ds-thread").attr({
+								"data-thread-key":window.location.pathname+window.location.search,
+								"data-title":$("#content").find(":header:first").text(),
+								"data-url":window.location.href
+							})
+						</script>
+					<!-- 多说公共JS代码 end -->
+
 				</div>
 			</div>
 		</div><!-- #content End -->
+
 		<div id="footer">
 			Power by <a href="https://github.com/dmscode/Wiki-in-box">Wiki in box</a>
 		</div> <!-- #footer End -->
