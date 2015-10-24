@@ -67,7 +67,6 @@ body>#main {
 body>#main #content {
 	background: #FEFEFE;
 	min-height: 480px;
-	border:1px solid #345;
 	-webkit-box-shadow: 1px 1px 1px 1px #123;
 	-moz-box-shadow: 1px 1px 1px 1px #123;
 	box-shadow: 1px 1px 2px 1px #123;
@@ -349,11 +348,12 @@ body>#header.scroll h1 {
 .ds-thread{
 	border-top: 2px solid #fff;
 	background: #fff;
-	margin: -1px 1px 1px 1px;
 }
 
 @media screen and (min-width: 64em) {
   body>#main .ds-thread {
+  	max-width: 64rem;
+  	margin: 0 auto;
 	padding: 10px 6rem;
     } }
 
