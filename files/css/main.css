@@ -6,6 +6,7 @@ body{
 	color:#414243;
 }
 a {
+	color:#5da093;
 	text-decoration: none;
 }
 a:hover {
@@ -271,7 +272,7 @@ body>#main h5:before
 /*报告页面特有*/
 #flow-box { position: relative; width: 100%; background: #f2f2f2;}
 #flow-box li {position: absolute; background: #fff; border: solid 1px #ccc; text-align: center; padding: 0.3rem; left: 0px; top: 0; list-style: none;}
-#flow-box li:hover {border: solid 1px #39C;border-radius:4px;margin-top: -2px;background-color: #39c;color: #fff;}
+#flow-box li:hover {border: solid 1px #6db0a3;border-radius:4px;margin-top: -2px;background-color: #6db0a3;color: #fff;}
 #flow-box h3 { padding-top: 8px; }
 #flow-box img { width: 11rem; height: auto; display: block; border: 0;}
     /*css3动画*/
@@ -310,7 +311,7 @@ body>#header.scroll {
 	margin-top: -35px;
 	color: #EFEFEF;
 	overflow: visible;
-	z-index: 1000;
+	z-index: 10;
 	border-bottom: 1px solid #0a1b2c;
 	box-shadow: 0px 0px 1px 1px #2a3b4c;
 	-webkit box-shadow: 0px 0px 1px 1px #2a3b4c;

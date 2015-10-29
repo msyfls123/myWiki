@@ -83,14 +83,14 @@
 				tooltip: {
 					// headerFormat: shopName[Number(this.point.index)],
 					formatter:function(){
-						return '<b>'+shopName[this.point.index]+'</b><br><span>价格： </span><span style="color:#17a">'+this.point.x+'</span><br><span>销量： </span><span style="color:#17a">'+this.point.y+'</span><br><span>总价： </span><span style="color:#c03;font-weight:bold">'+this.point.y*this.point.x+'</span>'
+						return '<b>'+shopName[this.point.index]+'</b><br><span>价格： </span><span style="color:#17a">'+this.point.x+'</span><br><span>销量： </span><span style="color:#17a">'+this.point.y+'</span><br><span>总价： </span><span style="color:#c03;font-weight:bold">'+this.point.y*this.point.x/10000+'万'+'</span>'
 					},
 					crosshairs: [{            // 设置准星线样式
 					    width: 1.5,
-					    color: '#f03030',
+					    color: '#0ff',
 					}, {
 					    width: 1.5,
-					    color: "#f03030",
+					    color: "#0ff",
 					}],
 				},
 				credits:{

@@ -92,7 +92,7 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 <script type="text/javascript" src="files/js/highcharts-more.js"></script>
 <script type="text/javascript" src="files/js/data.js"></script>
 <script type="text/javascript" src="files/js/exporting.js"></script>
-<div id="container" style="max-width:800px; height:400px;margin:20px auto;border:3px solid #7CB5EC"></div>
+<div id="container" style="max-width:800px; height:400px;margin:20px auto;border:3px solid #bbb"></div>
 <script type="text/javascript" src="files/js/graphic.js"></script>
 
 #####干衣机市场概况
