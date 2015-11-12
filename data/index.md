@@ -5,6 +5,7 @@ because it is there
 + [实习报告](Report)
 
 ###笔记###
++ [阿里云建站笔记](aliyun)
 + [软件使用小技巧](Tips)
 + [Python操作](Python)
 

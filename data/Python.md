@@ -52,3 +52,10 @@ Python操作
 	  cur.close()#关闭游标
 	  conn.close()#释放数据库资源
 	except  Exception :print("发生异常")
+
+###Pip install报错处理办法
+python目录 `Python27\Lib\site-packages` 建一个文件`sitecustomize.py`
+内容写: 
+
+	import sys 
+	sys.setdefaultencoding('gb2312') 
