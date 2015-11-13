@@ -21,8 +21,7 @@ body>#header {
 	background-color: #112238;
 	width: 100%;
 	height: 300px;
-	margin-top: -20px;
-	padding-top: 70px;
+	padding-top: 60px;
 	color: #EFEFEF;
 	overflow: hidden;
 	/*-webkit-transition: all .3s ease-out .1s; -moz-transition: all .3s ease-out; -o-transition: all .3s ease-out .1s; transition: all .3s ease-out .1s */
@@ -368,3 +367,13 @@ body>#header.scroll h1 {
   body>#main .ds-thread {
 	padding: 10px 1rem;
     } }
+
+#foobar{
+	width: 100%;
+	height: 350px;
+	display: none;
+}
+
+#foobar.at{
+	display: block;
+}

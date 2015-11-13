@@ -47,9 +47,11 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 				var scroH = $(this).scrollTop();
 				if(scroH>301){
 					$("#header").addClass("scroll");
+					$("#foobar").addClass("at");
 					$('#header h1').tooltip({placement:"left"})
 				}else {
 					$("#header").removeClass("scroll");
+					$("#foobar").removeClass("at");
 					$('#header h1').tooltip({placement:"bottom"})
 				}
 			};
