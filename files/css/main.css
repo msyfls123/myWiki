@@ -305,8 +305,8 @@ body>#header.scroll {
 	position: fixed;
 	background-color: #0c1d33;
 	width: 100%;
-	height: 70px;
-	padding-top: 0px;
+	height: 85px;
+	padding-top: 15px;
 	margin-top: -35px;
 	color: #EFEFEF;
 	overflow: visible;
@@ -377,3 +377,5 @@ body>#header.scroll h1 {
 #foobar.at{
 	display: block;
 }
+
+#cas{position: absolute;}
