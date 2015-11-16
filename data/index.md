@@ -3,6 +3,7 @@ because it is there
 
 ###汇总类###
 + [实习报告](Report)
++ [Collection](Collection)
 
 ###笔记###
 + [阿里云建站笔记](aliyun)
