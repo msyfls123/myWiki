@@ -15,10 +15,9 @@ a:hover {
 html,
 body {
 	margin:0;
-	background: #112238;
+	background: transparent;
 }
 body>#header {
-	background-color: #112238;
 	width: 100%;
 	height: 300px;
 	padding-top: 60px;
@@ -378,4 +377,4 @@ body>#header.scroll h1 {
 	display: block;
 }
 
-#cas{position: absolute;}
+#cas{position: fixed;width: 100%;height: 100%;z-index: -1}
