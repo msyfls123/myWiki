@@ -5,14 +5,22 @@ because it is there
 + [实习报告](Report)
 + [Collection](Collection)
 
-###笔记###
-+ [阿里云建站笔记](aliyun)
-+ [软件使用小技巧](Tips)
-+ [Python操作](Python)
-
 ###明日之事早打算###
 
 - [TodoList](TodoList)
+
+###笔记###
++ [网站开发笔记](Web)
++ [软件使用小技巧](Tips)
++ [Python操作](Python)
++ [阿里云建站笔记](aliyun)
+
+###保存网页
++ [Django 1.8.2中文文档](http://python.usyiyi.cn/django)
++ [大量 D3.js 示例](http://www.open-open.com/lib/view/open1387100056093.html)
++ [Tutorials of D3.js](https://github.com/mbostock/d3/wiki/Tutorials)
++ [Lynda.com教程网页设计编程建站相关教程合集](http://www.jiaochengonline.com/lynda-web-training-tutorials/)
++ [大量免费开发相关的英文电子书](http://www.open-open.com/lib/view/open1387100263499.html)
 
 ###待学习的书籍###
 1. [D3设计交互式图表](http://download.csdn.net/detail/qiyuexuel/8015875)
@@ -25,9 +33,3 @@ because it is there
 1. [Learnyounode](https://github.com/workshopper/learnyounode)--[NodeSchool](http://nodeschool.io/)
 1. [项目实战：Django个人博客系统](http://www.maiziedu.com/course/others/309-6051/)--[麦子学院](www.maiziedu.com/)
 1. [MITx: 6.00.1x - 计算机科学和Python编程导论](http://www.xuetangx.com/courses/course-v1:MITx+6_00_1x+2015_T1/info)--[学院在线](http://www.xuetangx.com/)
-
-###保存网页
-+ [大量 D3.js 示例](http://www.open-open.com/lib/view/open1387100056093.html)
-+ [Tutorials of D3.js](https://github.com/mbostock/d3/wiki/Tutorials)
-+ [Lynda.com教程网页设计编程建站相关教程合集](http://www.jiaochengonline.com/lynda-web-training-tutorials/)
-+ [大量免费开发相关的英文电子书](http://www.open-open.com/lib/view/open1387100263499.html)
