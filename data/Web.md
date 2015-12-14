@@ -60,3 +60,41 @@ Web
 	
 	#template.html
 	<a href="{% url 'bye' %}">bye</a>
+
+##Django的模板引用
++ `{% include 'xxx.html' %}` 表示包含其他网页
++ `{% extends 'base.html' %}` 表示继承自其他网页
++ `{% block content %}...{% endblock %}` 这其中的内容可被继承的网页更改
+
+1.base.html
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <title>{% block title %}默认标题{% endblock %}</title>
+	</head>
+	<body>
+	 
+	{% include 'nav.html' %}
+	 
+	{% block content %}
+	<div>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。</div>
+	{% endblock %}
+	 
+	{% include 'bottom.html' %}
+	 
+	{% include 'analys.html' %}
+	 
+	</body>
+
+
+2.home.html
+
+	{% extends 'base.html' %}
+ 
+	{% block title %}欢迎光临首页{% endblock %}
+	 
+	{% block content %}
+	{% include 'ad.html' %}
+	这里是首页，欢迎光临
+	{% endblock %}
