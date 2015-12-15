@@ -62,3 +62,13 @@ python目录 `Python27\Lib\site-packages` 建一个文件`sitecustomize.py`
 
 ###Python开启简易服务器
 在要开启服务器的目录下打开命令行，输入`python -m SimpleHTTPServer 8000` 以开启8000端口
+
+###Python将字符串转为相应类型
+
+	import ast
+	 
+	x ="[['One','Two','Three'],[1,2,3]]"
+	 
+	x = ast.literal_eval(x)
+	 
+	print x
