@@ -9,6 +9,7 @@ Web
 + `python manage.py migrate` 应用数据库更改
 + `python manage.py migrate --list` 查看数据库应用
 + `python manage.py shell` 打开SHELL命令行操作数据库
++ `python manage.py collectstatic` 收集静态文件至`STATIC_ROOT`文件夹
 
 
 ##Django 与 AngularJS 的冲突
@@ -37,6 +38,19 @@ Web
 
 	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />
 	<script type="text/javascript" src="{% static "js/angular.min.js" %}" />
+
+3.静态文件配置解释
+
+	# 静态文件会被收集到的目录
+	STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static') 
+
+	# 静态文件URL显示的路径
+	STATIC_URL = '/static/' # display in url
+
+	# 静态文件配置目录
+	STATICFILES_DIRS = (  
+	    ("js",os.path.join(BASE_DIR, 'static/js').replace('\\','/')),  # 
+	)
 
 ##Django的后台管理显示列表项
 
