@@ -112,3 +112,11 @@ Web
 	{% include 'ad.html' %}
 	这里是首页，欢迎光临
 	{% endblock %}
+
+##Django密码加密
+
+	#使用SHA1加密
+	import hashlib
+	passwd = lambda passwd : hashlib.sha1(passwd).hexdigest()
+
+[参考网址](http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/0013868328251266d86585fc9514536a638f06b41908d44000)
