@@ -26,20 +26,24 @@ Web
 1.在settings.py中配置如下:
     
     import os
-	STATIC_URL = '/static/'  
+	STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static') # collected
+	STATIC_URL = '/static/' # display in url
 	STATICFILES_DIRS = (  
-	    os.path.join(BASE_DIR, 'static').replace('\\','/'),  
-	    #如果是*nix系统，不需要replace函数
+	    ("js",os.path.join(BASE_DIR, 'static/js').replace('\\','/')),  #js files' static path
 	)
 
-2.页面引用css、js、img等静态文件:
+2.当`Debug=False`时需设置URL
+	
+	url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.STATICFILES_DIRS,}),
+
+3.页面引用css、js、img等静态文件:
 	
 	{% load staticfiles %}
 
 	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />
 	<script type="text/javascript" src="{% static "js/angular.min.js" %}" />
 
-3.静态文件配置解释
+4.静态文件配置解释
 
 	# 静态文件会被收集到的目录
 	STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static') 
@@ -120,3 +124,19 @@ Web
 	passwd = lambda passwd : hashlib.sha1(passwd).hexdigest()
 
 [参考网址](http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/0013868328251266d86585fc9514536a638f06b41908d44000)
+
+##Django通用视图
+	
+	#urls.py
+	url(r'^list/$', ListObj.as_view(),name="list"),
+
+	#views.py
+	from Tell.models import Item
+	from django.views.generic import ListView
+	class ListObj(ListView):
+    	model=Item
+
+    #Tell/item_list.html(这是默认模板，会自动寻找，objects_list就是Item.objects.all())
+    {% for item in object_list %}
+    <li>{{ item.title }}:{{ item.amount }}</li>
+	{% endfor %}
