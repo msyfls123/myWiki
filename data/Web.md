@@ -140,3 +140,65 @@ Web
     {% for item in object_list %}
     <li>{{ item.title }}:{{ item.amount }}</li>
 	{% endfor %}
+
+##Django通用视图查找数据
+
+1.通过`(?P<pk>\d+)`传Primary Key给视图类
+
+	#urls.py
+	from django.conf.urls import url
+	from . import views
+	urlpatterns = [
+		...
+	    url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
+	    ...
+	]
+
+	#views.py
+	from django.views import generic
+	class DetailView(generic.DetailView):
+    model = Question
+    template_name = 'polls/detail.html'    
+    def get_context_data(self, **kwargs):   ##添加上下文
+        context = super(DetailView, self).get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
+
+    #polls/detail.html
+    <h1>{{ question.question_text }}</h1>
+    <p>日期: {{ now|date }}</p>
+
+    #output for example
+    <h1>Question.objects.get(id=pk).question_text</h1>
+    <p>日期: Dec 19 2015</p>
+
+2.通过`(?P<pk>\d+)`传Primary Key给视图类
+
+	# views.py
+	from django.views.generic.detail import DetailView
+	from django.utils import timezone
+	 
+	from articles.models import Article
+	 
+	class ArticleDetailView(DetailView):
+	 
+	    model = Article # 要显示详情内容的类
+	     
+	    template_name = 'article_detail.html' 
+	    # 模板名称，默认为 应用名/类名_detail.html（即 app/modelname_detail.html）
+	 
+	    # 在 get_context_data() 函数中可以用于传递一些额外的内容到网页
+	    def get_context_data(self, **kwargs):
+	        context = super(ArticleDetailView, self).get_context_data(**kwargs)
+	        context['now'] = timezone.now()
+	        return context
+	         
+	         
+	# urls.py
+	from django.conf.urls import url
+	 
+	from article.views import ArticleDetailView
+	 
+	urlpatterns = [
+	    url(r'^(?P<slug>[-_\w]+)/$', ArticleDetailView.as_view(), name='article-detail'),
+	]

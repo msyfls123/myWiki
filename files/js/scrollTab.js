@@ -187,7 +187,7 @@ $(function(){
 $("#cas").html5_3d_animation({
             window_width: '1000',
             window_height: '400',
-            window_background: '#112238',
+            window_background: '#111',
             star_count: '1000',
             star_color: '#bcd',
             star_depth: '200'
