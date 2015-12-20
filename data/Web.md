@@ -1,7 +1,7 @@
 Web
 ===
 
-##Django 入门
+###Django 入门
 + `django-admin startproject XXX` 建立项目
 + `python manage.py runserver 0.0.0.0:8000` 启动服务器，监听8000端口
 + `python manage.py startapp XXX` 建立XXX应用
@@ -12,7 +12,7 @@ Web
 + `python manage.py collectstatic` 收集静态文件至`STATIC_ROOT`文件夹
 
 
-##Django 与 AngularJS 的冲突
+###Django 与 AngularJS 的冲突
 	
 	{{会被Django解析的变量}}.
 	{% if 1 %}会被Django解析的语句{% endif %}
@@ -21,7 +21,7 @@ Web
     	<span>{{会被Angular解析的变量}}</span>
 	{% endverbatim %}
 
-##Django加载静态文件(CSS,JS,img)
+###Django加载静态文件(CSS,JS,img)
 
 1.在settings.py中配置如下:
     
@@ -56,7 +56,7 @@ Web
 	    ("js",os.path.join(BASE_DIR, 'static/js').replace('\\','/')),  # 
 	)
 
-##Django的后台管理显示列表项
+###Django的后台管理显示列表项
 
 	#admin.py
 	from django.contrib import admin
@@ -67,7 +67,7 @@ Web
 		list_display = ["title","value",...]
 	admin.site.register(models.Item,ItemAdmin)
 
-##Django的URL引用
+###Django的URL引用
 
 	#urls.py
 	from django.conf.urls import include, url
@@ -79,7 +79,7 @@ Web
 	#template.html
 	<a href="{% url 'bye' %}">bye</a>
 
-##Django的模板引用
+###Django的模板引用
 + `{% include 'xxx.html' %}` 表示包含其他网页
 + `{% extends 'base.html' %}` 表示继承自其他网页
 + `{% block content %}...{% endblock %}` 这其中的内容可被继承的网页更改
@@ -117,7 +117,7 @@ Web
 	这里是首页，欢迎光临
 	{% endblock %}
 
-##Django密码加密
+###Django密码加密
 
 	#使用SHA1加密
 	import hashlib
@@ -125,7 +125,7 @@ Web
 
 [参考网址](http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/0013868328251266d86585fc9514536a638f06b41908d44000)
 
-##Django通用视图
+###Django通用视图
 	
 	#urls.py
 	url(r'^list/$', ListObj.as_view(),name="list"),
@@ -141,7 +141,7 @@ Web
     <li>{{ item.title }}:{{ item.amount }}</li>
 	{% endfor %}
 
-##Django通用视图查找数据
+###Django通用视图查找数据
 
 1.通过`(?P<pk>\d+)`传Primary Key给视图类
 
@@ -202,3 +202,21 @@ Web
 	urlpatterns = [
 	    url(r'^(?P<slug>[-_\w]+)/$', ArticleDetailView.as_view(), name='article-detail'),
 	]
+
+__SlugField__
+
+`class SlugField([max_length=50, **options])`
+
+Slug is a newspaper term. A slug is a short label for something, containing only letters, numbers, underscores or hyphens. They’re generally used in URLs.
+
+Set `prepopulated_fields` to a dictionary mapping field names to the fields it should prepopulate from:
+
+	class ArticleAdmin(admin.ModelAdmin):
+	    prepopulated_fields = {"slug": ("title",)}
+
+<div id="quickLink">
+  <ul>
+  </ul>
+</div>
+<div id="backTop" data-toggle="tooltip" title="飞" ></div>
+<script src="files/js/scrollTab.js"></script>
