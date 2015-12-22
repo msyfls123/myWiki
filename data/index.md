@@ -10,6 +10,7 @@ because it is there
 - [TodoList](TodoList)
 
 ###笔记###
++ [Django部署笔记](Deploy)
 + [网站开发笔记](Web)
 + [APP开发笔记](WebApp)
 + [软件使用小技巧](Tips)
