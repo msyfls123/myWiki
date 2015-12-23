@@ -72,7 +72,7 @@ Django项目部署
     #urls.py
     urlpatterns = [
     	...
-    	url(r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.MEDIA_ROOT,}), #部署
+    	url(r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.MEDIA_ROOT,}), #开发,部署时可以去掉
 	]
 
 	handler404 = 'someapp.views.page_not_found'
