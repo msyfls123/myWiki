@@ -40,6 +40,8 @@ Django项目部署
 
 	DEBUG = False
 	ALLOWED_HOSTS = ["*"] #需改成你网站的域名或IP
+	LANGUAGE_CODE = 'zh-hans'
+	TIME_ZONE = 'Asia/Shanghai'
 
 	STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static') #开发，部署后可注释掉
 	STATIC_URL = '/static/' #部署
@@ -91,7 +93,7 @@ Django项目部署
 
 	mysql -uroot -p
 	Enter password : ********
-	mysql> create database mysite;
+	mysql> CREATE DATABASE mysite DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 	mysql> grant all privileges on mysite.* to 你的用户名@localhost identified by "root";
 	mysql> use mysql;
 	mysql> UPDATE user SET password=PASSWORD('你的密码') WHERE user='你的用户名';
