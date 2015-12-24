@@ -3,11 +3,8 @@ because it is there
 
 ###汇总类###
 + [实习报告](Report)
++ [软件神器](Software)
 + [Collection](Collection)
-
-###明日之事早打算###
-
-- [TodoList](TodoList)
 
 ###笔记###
 + [Django部署笔记](Deploy)
