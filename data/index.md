@@ -6,13 +6,17 @@ because it is there
 + [软件神器](Software)
 + [Collection](Collection)
 
+
 ###笔记###
-+ [Django部署笔记](Deploy)
-+ [网站开发笔记](Web)
-+ [APP开发笔记](WebApp)
-+ [软件使用小技巧](Tips)
++ 网站开发
+	+ [Django部署](Deploy)
+	+ [Django学习](Web)
+	+ [Ckeditor配置](Ckeditor)
+	+ [阿里云建站](aliyun)
++ [APP开发](WebApp)
 + [Python操作](Python)
-+ [阿里云建站笔记](aliyun)
++ [软件使用小技巧](Tips)
+
 
 ###保存网页
 + [Django 1.8.2中文文档](http://python.usyiyi.cn/django)
