@@ -8,11 +8,7 @@ because it is there
 
 
 ###笔记###
-+ 网站开发
-	+ [Django部署](Deploy)
-	+ [Django学习](Web)
-	+ [Ckeditor配置](Ckeditor)
-	+ [阿里云建站](aliyun)
++ [网站开发](WebAll)
 + [APP开发](WebApp)
 + [Python操作](Python)
 + [软件使用小技巧](Tips)

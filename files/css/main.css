@@ -136,7 +136,7 @@ pre code {
 	display: block;
 	padding: 10px 13px;
 	margin:0;
-	border-left:2px solid #abc;
+	/*border-left:2px solid #abc;*/
 	background: #f0f0f0;
 }
 pre code .code-line {
