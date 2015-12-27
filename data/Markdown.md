@@ -179,7 +179,7 @@ __效果__
 
 	*[ABBR]: Markdown plus abbreviations (produces an <abbr> tag)
 
-<small>内容转自[django1.8下的markdown、highlight、pagedown解决](http://segmentfault.com/a/1190000003933331), 特此注明</small>
+>参考自[django1.8下的markdown、highlight、pagedown解决](http://segmentfault.com/a/1190000003933331)
 
 <div id="quickLink">
   <ul>

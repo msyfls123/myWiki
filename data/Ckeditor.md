@@ -143,10 +143,7 @@ Django下Ckeditor的配置
 ####图片上传
 ![图片上传](imgs/ckeditor2.jpg)
 
-<small>内容部分转自<br>
-	[django下的ckeditor 5.0 文本编辑器上传功能](http://www.mamicode.com/info-detail-1116287.html)<br>
-	[基于django的博客系统如何完美地使用富文本编辑器ckeditor？](http://www.nanerbang.com/article/2/)
-	<br>特此注明</small>
+>参考自	[django下的ckeditor 5.0 文本编辑器上传功能](http://www.mamicode.com/info-detail-1116287.html)<br>[基于django的博客系统如何完美地使用富文本编辑器ckeditor？](http://www.nanerbang.com/article/2/)
 
 <div id="quickLink">
   <ul>

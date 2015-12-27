@@ -199,6 +199,14 @@ body>#main #content blockquote>blockquote {
 	background: #FFF;
 }
 
+body>#main #content blockquote a{
+	color: #DDE00E;
+}
+
+body>#main #content blockquote a:hover{
+	color: #FF0;
+}
+
 /*body>#main table {
 	width: 100%;
 }

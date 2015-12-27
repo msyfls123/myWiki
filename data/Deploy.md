@@ -252,7 +252,7 @@ Django项目部署
 
 ###[示例文件](store/demo.zip)
 
-<small>内容部分转自[五步教你实现使用Nginx+uWSGI+Django方法部署Django程序(上)](http://www.django-china.cn/topic/101/)[(下)](http://www.django-china.cn/topic/124/), 特此注明</small>
+>参考自[五步教你实现使用Nginx+uWSGI+Django方法部署Django程序(上)](http://www.django-china.cn/topic/101/)[(下)](http://www.django-china.cn/topic/124/)
 
 <div id="quickLink">
   <ul>
