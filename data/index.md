@@ -19,7 +19,7 @@ because it is there
 + [Django 1.8.2中文文档](http://python.usyiyi.cn/django)
 + [大量 D3.js 示例](http://www.open-open.com/lib/view/open1387100056093.html)
 + [Tutorials of D3.js](https://github.com/mbostock/d3/wiki/Tutorials)
-+ [Lynda.com教程网页设计编程建站相关教程合集](http://www.jiaochengonline.cPgom/lynda-web-training-tutorials/)
++ [Lynda.com教程网页设计编程建站相关教程合集](http://www.jiaochengonline.com/lynda-web-training-tutorials/)
 + [大量免费开发相关的英文电子书](http://www.open-open.com/lib/view/open1387100263499.html)
 
 ###待学习的书籍###
