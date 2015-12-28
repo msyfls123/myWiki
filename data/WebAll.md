@@ -4,6 +4,7 @@
 + [Ckeditor配置](Ckeditor)
 + [Markdown功能](Markdown)
 + [用户认证](Auth)
++ [缩略图](Thumb)
 -------
 + [Django部署](Deploy)
 + [阿里云建站](aliyun)
