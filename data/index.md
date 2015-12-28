@@ -15,6 +15,7 @@ because it is there
 
 
 ###保存网页
++ [快速入门-Pillow v2.4.0 (PIL fork)](http://pillow-cn.readthedocs.org/zh_CN/latest/handbook/tutorial.html)
 + [Django 1.8.2中文文档](http://python.usyiyi.cn/django)
 + [大量 D3.js 示例](http://www.open-open.com/lib/view/open1387100056093.html)
 + [Tutorials of D3.js](https://github.com/mbostock/d3/wiki/Tutorials)
