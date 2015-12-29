@@ -50,13 +50,13 @@
 				if(num<10){num='0'+String(num)}
 				canvas.width = 66;
 				canvas.height = 28;
-				ctx.font = "12px Arial"; 
+				ctx.font = "10px Arial"; 
 				// 设置对齐方式
 				ctx.textAlign = "right";
 				// 设置填充颜色
 				ctx.fillStyle = "#eee"; 
 				// 设置字体内容，以及在画布上的位置
-				ctx.fillText(num, 65, 20);
+				ctx.fillText(num, 65, 16);
 				// 返回图像
 				var image = new Image();
 				return canvas.toDataURL("image/png");

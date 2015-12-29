@@ -134,23 +134,27 @@ pre {
 }
 pre code {
 	display: block;
-	padding: 10px 13px;
+	padding: 10px 0px;
 	margin:0;
 	/*border-left:2px solid #abc;*/
 	background: #f0f0f0;
 }
+
 pre code .code-line {
 	position: relative;
-	min-height: 1.8em;
-	font-size: 0.9px;
+	min-height: 1.6em;
+	font-size: 0.73em;
+}
+pre code .code-line:hover{
+	background: #fbfbfb;
 }
 pre code .code-line .line-num {
 	position: absolute;
 	left: -77px;
-	width: 60px;
+	width: 73px;
 	height: 100%;
 	padding: 0 5px;
-	margin-top:-7px;
+	margin-top:-4px;
 	text-align: right;
 	color: #999;
 }
