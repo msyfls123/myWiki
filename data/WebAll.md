@@ -5,6 +5,7 @@
 + [Markdown功能](Markdown)
 + [用户认证](Auth)
 + [缩略图](Thumb)
++ [国际化](I18N)
 -------
 + [Django部署](Deploy)
 + [阿里云建站](aliyun)
