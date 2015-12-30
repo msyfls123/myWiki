@@ -144,6 +144,7 @@ pre code .code-line {
 	position: relative;
 	min-height: 1.6em;
 	font-size: 0.73em;
+	padding-left: 1.2em;
 }
 pre code .code-line:hover{
 	background: #fbfbfb;
