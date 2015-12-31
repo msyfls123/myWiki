@@ -168,7 +168,7 @@ Django项目部署
 
 注意，请确定`django_wsgi.py`文件已经存在了。
 
-新建一个XML文件：`djangochina_socket.xml`，将它放在 `/home/mysite` 目录下：
+新建一个XML文件：`django_socket.xml`，将它放在 `/home/mysite` 目录下：
 	
 	<uwsgi>
     <socket>:8077</socket>
