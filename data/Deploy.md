@@ -246,9 +246,9 @@ Django项目部署
 
 将uWSGi进程杀死即可。
 
-1. killall  -9 uwsgi
-2. killall -s HUP /var/www/uwsgi 
-3. killall -s HUP /usr/local/bin/uwsgi
+1. `killall  -9 uwsgi`
+2. `killall -s HUP /var/www/uwsgi`
+3. `killall -s HUP /usr/local/bin/uwsgi`
 
 ###[示例文件](store/demo.zip)
 
