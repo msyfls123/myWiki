@@ -8,5 +8,6 @@
 + [国际化](I18N)
 + [发送邮件](Email)
 -------
++ [Git同步](Git)
 + [Django部署](Deploy)
 + [阿里云建站](aliyun)
