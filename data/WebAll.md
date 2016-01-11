@@ -7,6 +7,7 @@
 + [缩略图](Thumb)
 + [国际化](I18N)
 + [发送邮件](Email)
++ [Jinja2模板](Jinja2)
 -------
 + [Git同步](Git)
 + [Django部署](Deploy)
