@@ -217,6 +217,14 @@ Django项目部署
 	        location /media/ {
 	            alias  /home/media/;
 	        }
+	        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+			{
+				expires 30d;
+			}
+			location ~ .*\.(js|css)?$
+			{
+				expires 1h;
+			}
 	    }
 在上面的设置后，可以让Nginx来处理静态文件(/static/ 和 /media/ ）。非静态文件请求Nginx会发给 socket 8077，然后让uWSGI来进行处理。
 
