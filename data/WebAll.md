@@ -11,5 +11,6 @@
 + [缩略图](Thumb)
 -------
 + [Git同步](Git)
++ [Nginx奇技淫巧](Nginx)
 + [Django部署](Deploy)
 + [阿里云建站](aliyun)
