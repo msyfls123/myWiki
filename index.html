@@ -11,13 +11,13 @@
 
 		<!-- Bootstrap -->
 		<link href="files/css/bootstrap.min.css" rel="stylesheet">
-		<link href="files/css/github.css" rel="stylesheet">
+		<link href="files/css/tomorrow.css" rel="stylesheet">
 		<link href="files/css/main.css" rel="stylesheet">
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="files/js/jquery.min.js"></script>
 		<script src="files/js/marked.js"></script>
 		<script src="files/js/highlight.js"></script>
-		
+
 		<!-- My CSS and JS -->
 		<!-- <link href='http://www.youziku.com/webfont/NameCSS/41545' rel='stylesheet' type='text/css'/> -->
 		<link rel="stylesheet" href="files/css/imgbox.css" />
@@ -27,7 +27,7 @@
 
 		<script>
 			// 获取 get 参数的函数
-			function QueryGET(TheName){      
+			function QueryGET(TheName){
 				var urlt = window.location.href.split("?");
 				if(!urlt[1]){}else{
 					var clearurl = urlt[1].split("#");
@@ -50,11 +50,11 @@
 				if(num<10){num='0'+String(num)}
 				canvas.width = 66;
 				canvas.height = 28;
-				ctx.font = "10px Arial"; 
+				ctx.font = "10px Arial";
 				// 设置对齐方式
 				ctx.textAlign = "right";
 				// 设置填充颜色
-				ctx.fillStyle = "#eee"; 
+				ctx.fillStyle = "#bbb";
 				// 设置字体内容，以及在画布上的位置
 				ctx.fillText(num, 65, 16);
 				// 返回图像
@@ -88,7 +88,7 @@
 				if(!name || name == undefined || name == "undefined"){
 					dirurl += "/index";
 				}else{
-					subnames = name.split(":"); 
+					subnames = name.split(":");
 					for(i in subnames){
 						dirurl += "/" +subnames[i];
 					};
@@ -175,7 +175,7 @@
 							ds.type = 'text/javascript';ds.async = true;
 							ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
 							ds.charset = 'UTF-8';
-							(document.getElementsByTagName('head')[0] 
+							(document.getElementsByTagName('head')[0]
 							 || document.getElementsByTagName('body')[0]).appendChild(ds);
 						})();
 						</script>
