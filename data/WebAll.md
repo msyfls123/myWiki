@@ -4,6 +4,7 @@
 + [用户认证](Auth)
 + [缓存](Cache)
 + [国际化](I18N)
++ [简单页面](Flatpage)
 + [发送邮件](Email)
 + [Ajax轮询](Ajax)
 + [Jinja2模板](Jinja2)
