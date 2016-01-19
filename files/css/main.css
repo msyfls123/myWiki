@@ -28,7 +28,7 @@ body>#header {
 
 body>#header img{
 	border: 2px solid #efefef;
-	box-shadow: 0px 3px 10px 3px #123;
+	box-shadow: 0px 0px 10px 3px #123;
 	transform:rotate(-360deg);
 	border-radius: 50%;
 	 -webkit-transition: all .5s ease-out .1s; -moz-transition: all .5s ease-out; -o-transition: all .5s ease-out .1s; transition: all .5s ease-out .1s
@@ -186,28 +186,22 @@ body>#main #content .img-box img {
 	max-width: 100%;
 }
 body>#main #content blockquote {
-	background:#ddd url(../../imgs/quotel.png) no-repeat 30px 10px;
+	background:#f0f0f0 url(../../imgs/quotell.png) no-repeat 30px 10px;
 	font-size: 16px;
 	padding: 10px 20px 10px 50px;
 	border-right: : none;
-	border-left: 10px solid #cfcfcf;
-	color: #777;
+	border-left: 10px solid #d8d8d8;
+	color: #555;
 }
 
 body>#main #content blockquote p:last-child{
 	display: inline;
 	padding: 0 16px 0 0;
-	background: url(../../imgs/quoter.png) no-repeat right center
+	background: url(../../imgs/quoterr.png) no-repeat right center
 }
 
 body>#main #content blockquote>blockquote {
 	background: #FFF;
-}
-
-body>#main #content blockquote p:last-child{
-	display: inline;
-	padding: 0 16px 0 0;
-	background: url(../../imgs/quoter.png) no-repeat right center
 }
 
 body>#main #content blockquote a:hover{
@@ -343,6 +337,12 @@ body>#header.scroll img{
 	border: 2px solid #efefef;
 	border-radius: 50%;
 	transform:rotate(0deg);
+}
+@media screen and (max-width:64em){
+	body>#header.scroll img{
+		opacity: 0;
+		-webkit-transition: all .5s ease-out .1s; -moz-transition: all .5s ease-out; -o-transition: all .5s ease-out .1s; transition: all .5s ease-out .1s
+	}
 }
 
 body>#header img:hover{
