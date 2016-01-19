@@ -28,33 +28,47 @@ ll access.
 7. 然后就可以正常进行`git push`了
 
 ###服务器端操作
+__假设你现在是以`root`登陆，但是为`git`用户创建仓库__
 1. 首先创建一个裸库，为什么是裸库？因为这个库不是真正用来修改的, 我们也不允许在服务器上修改代码, 我们只是把它当作一个代码中转的地方:
 ```
-cd gitroot
-mkdir projectname
-cd projectname
-git init --bare
+cd /home/git
+git init --bare projectname.git
 ```
+
 2. 添加我们的`hook`
 ```
 cd /hooks
 touch post-update
 ```
-3. 编辑`post-update`的内容, 其中`sites/projectname`, 是我们存放网站代码地方
+3. 编辑`post-update`的内容, 其中`sites/projectname.git`, 是我们存放网站代码地方
 ```
 #!/bin/sh
 unset $(git rev-parse --local-env-vars)
-env -i git archive master | tar -x -C /sites/projectname 
+env -i git archive master | tar -x -C /sites/projectname
 echo "远程更新完毕"
 ```
 4. 输入`chmod 755 post-update`来使`post-update`可执行
 
 5. 创建`/sites/projectname`目录, 以使`hook`能正常工作, 否则会报错
 
+6. 统一将各个文件的所有者划归为`Git`
+```
+chown -Rh git:git /home/git/projectname.git
+chown -Rh git:git /sites/projectname
+```
+7. 为免去每次都要输密码的痛苦，可以创建证书登录
+```
+cd /home/git
+mkdir .ssh
+cd .ssh
+touch authorized_keys
+```
+收集所有需要登录的用户的公钥，就是他们自己的`id_rsa.pub`文件，把所有公钥导入到`/home/git/.ssh/authorized_keys`文件里，一行一个。
+
 ###本地git的操作
 本地我们只需要添加一个远程库, 在需要部署的时候push到远程库就行了, 下面我们添加了两个分别名为`publish`和`origin`的远程库
 ```
-git remote add publish username@xx.xx.xx.xx:/home/gitroot/projectname
+git remote add publish git@xx.xx.xx.xx:/home/git/projectname.git
 git remote add publish git@github.com:username/projectname.git
 git push publish master
 ```
@@ -62,4 +76,4 @@ git push publish master
 ###可以强化的地方
 这里演示的是一个简单的小网站的部署过程，复杂的情况下我们还可以添加静态资源版本更新, 服务器重启等等, 举一反三,  最大程序自动化我们的工作。
 
->参考自[使用git代替FTP部署代码到服务器的例子](http://www.jb51.net/article/54867.htm)	
+>参考自[使用git代替FTP部署代码到服务器的例子](http://www.jb51.net/article/54867.htm)
