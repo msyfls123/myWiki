@@ -13,6 +13,7 @@
 + [缩略图](Thumb)
 -------
 + [自定义滚动条](http://manos.malihu.gr/jquery-custom-content-scroller/#configuration-section)
++ [Gulp入门](http://segmentfault.com/a/1190000000372547) [API](http://www.ydcss.com/archives/424)
 -------
 + [Git同步](Git)
 + [Nginx奇技淫巧](Nginx)
