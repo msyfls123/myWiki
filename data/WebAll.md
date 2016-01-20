@@ -12,6 +12,8 @@
 + [Markdown功能](Markdown)
 + [缩略图](Thumb)
 -------
++ [自定义滚动条](http://manos.malihu.gr/jquery-custom-content-scroller/#configuration-section)
+-------
 + [Git同步](Git)
 + [Nginx奇技淫巧](Nginx)
 + [Django部署](Deploy)
