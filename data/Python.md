@@ -72,10 +72,45 @@ for date item in groupby(rows, key = itemgetter('date') )
 	for i in items:
 		print("  ",i)
 ```
-###Python3 使用pip
+###Python字符串
+####Python将字符串转为相应类型
+
+	import ast
+
+	x ="[['One','Two','Three'],[1,2,3]]"
+
+	x = ast.literal_eval(x)
+
+	print x
+
+####正则拆分字符串
+```
+line = 'asdf ffaf; asfa, fafa,asdf,   foo'
+import re
+re.split(r'[;,\s]\s*',line) # 分割文本
+re.split(r'(;|,|\s)\s*',line) # 对符号也做捕获
+re.split(r'(?:;|,|\s)\s*',line) # 分组非捕获查询
+```
+####匹配
+```
+str = '123.txt'
+str.startswith('http:')
+str.endswith('.txt')
+str.endswith('.txt','.py')
+str.find('txt') # 4
+
+from fnmatch import fnmatch,fnmatchcase
+fnmatch(name,'Dat*.txt') # 忽略大小写
+fnmatchcase(name,'Dat*.txt') # 精确大小写
+```
+
+####
+
+###Python杂项
+####Python3 使用pip
 `python3 -m pip <command> [options]`
 
-###Python2操作MySQL
+####Python2操作MySQL
 
 	#coding=utf-8
 	import MySQLdb
@@ -106,7 +141,7 @@ for date item in groupby(rows, key = itemgetter('date') )
 	conn.commit()
 	conn.close()
 
-###Python3操作MySQL
+####Python3操作MySQL
 
 	#coding=utf-8
 	import pymysql
@@ -124,27 +159,18 @@ for date item in groupby(rows, key = itemgetter('date') )
 	  conn.close()#释放数据库资源
 	except  Exception :print("发生异常")
 
-###Pip install报错处理办法
+####Pip install报错处理办法
 python目录 `Python27\Lib\site-packages` 建一个文件`sitecustomize.py`
 内容写:
 
 	import sys
 	sys.setdefaultencoding('gb2312')
 
-###Python开启简易服务器
+####Python开启简易服务器
 在要开启服务器的目录下打开命令行，输入`python -m SimpleHTTPServer 8000` 以开启8000端口
 
-###Python将字符串转为相应类型
-
-	import ast
-
-	x ="[['One','Two','Three'],[1,2,3]]"
-
-	x = ast.literal_eval(x)
-
-	print x
-
-###PIL创建 JPEG 缩略图
+###Python图像
+####PIL创建 JPEG 缩略图
 ```
 from __future__ import print_function
 import os, sys

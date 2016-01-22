@@ -309,7 +309,7 @@ body>#main h5:before
 #quickLink ul li.s:before{content: ""}
 #quickLink ul li.s:hover{color: #012;}
 #quickLink ul li.s:hover:before{content: ""}
-#quickLink ul li.ss{list-style: none;color: #aaa;width: 179px;text-overflow:ellipsis;}
+#quickLink ul li.ss{list-style: none;color: #aaa;width: 179px;height: 20px;overflow:hidden;}
 #quickLink ul li.ss:before{content: "+ "}
 #quickLink ul li.ss:hover{color: #012;}
 #quickLink ul li.ss:hover:before{content: "+ "}
