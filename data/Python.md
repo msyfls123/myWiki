@@ -83,14 +83,43 @@ for date item in groupby(rows, key = itemgetter('date') )
 
 	print x
 
-####正则拆分字符串
-```
-line = 'asdf ffaf; asfa, fafa,asdf,   foo'
-import re
-re.split(r'[;,\s]\s*',line) # 分割文本
-re.split(r'(;|,|\s)\s*',line) # 对符号也做捕获
-re.split(r'(?:;|,|\s)\s*',line) # 分组非捕获查询
-```
+####正则
+
+1. 分解
+		```
+		line = 'asdf ffaf; asfa, fafa,asdf,   foo'
+		import re
+		re.split(r'[;,\s]\s*',line) # 分割文本
+		re.split(r'(;|,|\s)\s*',line) # 对符号也做捕获
+		re.split(r'(?:;|,|\s)\s*',line) # 分组非捕获查询
+		```
+1. 抓取
+		```
+		datepat = re.compile(r'(\d+)/(\d+)/(\d+)')
+		text = 'Today is 11/27/2012. PyCon starts 3/13/2013'
+		datepat.findall(text) # [('11','27','2012'),('3','13','2013')]
+		m = datepat.match('11/27/2012')
+		m.groups() # ('11','27','2012')
+		m.group(0) # '11'
+		for m in datepat.finditer(text):
+				print(m.groups())
+		```
+1. 替换
+	```
+re.sub(r'def\s+([a-zA-Z_][a-zA-Z_0-9]*)\s*\(\s*\):',
+        r'static PyObject*\npy_\1(void)\n{',
+        'def myfunc():')
+'static PyObject*\npy_myfunc(void)\n{'
+
+	def dashrepl(matchobj):
+	  if matchobj.group(0) == '-': return ' '
+	  else: return '-'
+	re.sub('-{1,2}', dashrepl, 'pro----gram-files')
+	# 'pro--gram files'
+	re.sub(r'\sAND\s', ' & ', 'Baked Beans And Spam', flags=re.IGNORECASE)
+	# 'Baked Beans & Spam'
+	```
+
 ####匹配
 ```
 str = '123.txt'
