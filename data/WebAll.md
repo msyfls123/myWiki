@@ -1,6 +1,7 @@
 日积跬步
 ===
 + [Django学习](Web)
++ [模型](QuerySet)
 + [用户认证](Auth)
 + [缓存](Cache)
 + [国际化](I18N)
