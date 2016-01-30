@@ -9,6 +9,7 @@
 + [发送邮件](Email)
 + [Ajax轮询](Ajax)
 + [Jinja2模板](Jinja2)
++ [后台Bootstrap化](Bootstrap)
 + [Ckeditor配置](Ckeditor)
 + [Markdown功能](Markdown)
 + [缩略图](Thumb)
