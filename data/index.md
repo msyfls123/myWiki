@@ -3,13 +3,12 @@ Because it's there
 
 ###汇总类###
 + [实习报告](Report)
-+ [软件神器](Software)
 + [Collection](Collection)
 
 
 ###笔记###
 + [网站开发](WebAll)
-+ [APP开发](WebApp)
++ [D3.js学习](d3js)
 + [Python操作](Python)
 + [软件使用小技巧](Tips)
 
