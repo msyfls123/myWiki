@@ -9,7 +9,7 @@ Because it's there
 ###笔记###
 + [网站开发](WebAll)
 + [D3.js学习](d3js)
-+ [PyQt入门](PyQt)
++ [PyQt入门](PyQt)+[Gui](Gui)
 + [Python操作](Python)
 + [软件使用小技巧](Tips)
 
