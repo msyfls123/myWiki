@@ -253,13 +253,25 @@ body>#main h1,h2,h3,h4,h5{
 	color:#414243;
 }
 
+body>#main h3,h4,h5{
+	color:#fff;
+	background-color: #414243;
+	line-height: 1.2;
+}
+
+body>#main h3 code,body>#main h4 code,body>#main h5 code{
+	color:#1BFBD3;
+	background-color: #414243;
+	padding:0px 4px 1px 4px;
+}
+
 body>#main{counter-reset:section;}
 body>#main h3{counter-reset:subsection;}
 body>#main h4{counter-reset:subsubsection;}
 
 body>#main h3:before,body>#main h4:before,body>#main h5:before{
-	color: #fff;
-	background: #414243;
+	color: #ccc;
+	background: #616263;
 	padding-left: 7px;
 	margin-right: 5px;
 }
