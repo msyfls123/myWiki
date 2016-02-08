@@ -44,7 +44,8 @@ __Tip:__ 在[这里](https://github.com/atom/electron/releases)下载对应压�
   greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
   ```
 3. 保存之后继续命令行 `qmake`
-4. `nmake release` 即可
+4. `vcvarsall.bat` 导入`VC`的各种变量和库文件
+5. `nmake release` 即可
 
 ####示例程序
 `main.cpp`
