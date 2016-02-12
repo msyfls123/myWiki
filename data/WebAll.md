@@ -19,6 +19,7 @@
 + [Gulp入门](http://segmentfault.com/a/1190000000372547) [API](http://www.ydcss.com/archives/424)
 + [渐进式JPG](http://www.phperz.com/article/16/0123/38858.html) [Photoshop](http://www.jb51.net/photoshop/182198.html)
 -------
++ [Unicode详解](http://www.ruanyifeng.com/blog/2014/12/unicode.html)[字符编解码的故事](http://www.imkevinyang.com/2009/02/%E5%AD%97%E7%AC%A6%E7%BC%96%E8%A7%A3%E7%A0%81%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%88ascii%EF%BC%8Cansi%EF%BC%8Cunicode%EF%BC%8Cutf-8%E5%8C%BA%E5%88%AB%EF%BC%89.html)
 + [Git同步](Git)
 + [Nginx奇技淫巧](Nginx)
 + [Django部署](Deploy)
