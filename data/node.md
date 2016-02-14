@@ -381,6 +381,75 @@ var req = http.request(options, readJSONResponse);
 req.write('{"name":"Bilbo", "occupation":"Burglar"}');
 req.end();
 ```
+###HTTPS服务器
+HTTPS中一个关键就是证书文件。当然我们可以找专业的第三方机构签发。自己玩玩的话就用自签名的证书就可以了，用户在访问的时候则需要确认安全性问题。
+
+####生成密钥
+  生成传输pre-master secret的时候所需要的Server端的私钥，运行时提示需要输入密码，用于对key的加密。以后每次读取此文件的时候，都需要输入指令。
+  ```
+  # 生成服务器端的非对称秘钥
+  openssl genrsa -des3 -out server.key 1024
+
+  # 生成签名请求的CSR文件
+  openssl req -new -key server.key -out server.csr
+
+  # 自己对证书进行签名，签名的有效期是365天
+  openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+  # 去除证书文件的password
+  cp server.key server.key.orig
+  openssl rsa -in server.key.orig -out server.key
+```
+#### 使用密钥
+
+  + `server.crt`
+  + `server.key`
+
+####建立服务器
+  NodeJS建立一个HTTPS的Server
+  ```
+  var httpsModule = require('https');
+  var fs = require('fs');
+
+  var https = httpsModule.Server({
+       key: fs.readFileSync('/path/to/server.key'),
+       cert: fs.readFileSync('/path/to/server.crt')
+  }, function(req, res){
+      res.writeHead(200);
+      res.end("hello world\n");
+  });
+
+  //https默认de监听端口时443，启动1000以下的端口时需要sudo权限
+  https.listen(443, function(err){  
+       console.log("https listening on port: 443");
+  });
+  ```
+  这里使用的fs.readFileSync方法会阻塞其他进程直到文件的读取完毕，在读取关键的配置文件的时候这样的方法是比较适宜的。
+####Plan`B`
+```
+openssl genrsa -out s.pem 2048
+openssl req -new -key s.pem -out s.csr
+#不要输入密码
+openssl x509 -req -days 365 -in s.csr -signkey s.pem -out s.crt
+```
+
+```
+var https = require('https');
+var fs = require('fs');
+
+var server = https.createServer({
+     key: fs.readFileSync('s.pem'),
+     cert: fs.readFileSync('s.crt')
+}, function(req, res){
+    res.writeHead(200);
+    res.end("hello not world\n");
+});
+
+server.listen(811, function(err){
+     console.log("https listening on port: 811");
+});
+```
+  >参考[HTTPS 的原理和 NodeJS 的实现](https://segmentfault.com/a/1190000002630688)
 
 <div id="quickLink">
   <ul>

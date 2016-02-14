@@ -255,14 +255,14 @@ body>#main h1,h2,h3,h4,h5{
 
 body>#main h3,h4,h5{
 	color:#fff;
-	background-color: #414243;
+	background-color: #404040;
 	line-height: 1.2;
 }
 
 body>#main h3 code,body>#main h4 code,body>#main h5 code{
 	color:#1BFBD3;
-	background-color: #232323;
-	padding:0px 4px 1px 4px;
+	background-color: #404040;
+	padding:0px 4px 0px 4px;
 }
 
 body>#main{counter-reset:section;}
