@@ -451,6 +451,255 @@ server.listen(811, function(err){
 ```
   >参考[HTTPS 的原理和 NodeJS 的实现](https://segmentfault.com/a/1190000002630688)
 
+###WebSocket
+socket_server
+```
+var net = require('net');
+var server = net.createServer(function(client) {
+  console.log('Client connection: ');
+  console.log('   local = %s:%s', client.localAddress, client.localPort);
+  console.log('   remote = %s:%s', client.remoteAddress, client.remotePort);
+  client.setTimeout(500);
+  client.setEncoding('utf8');
+  client.on('data', function(data) {
+    console.log('Received data from client on port %d: %s',
+                client.remotePort, data.toString());
+    console.log('  Bytes received: ' + client.bytesRead);
+    writeData(client, 'Sending: ' + data.toString());
+    console.log('  Bytes sent: ' + client.bytesWritten);
+  });
+  client.on('end', function() {
+    console.log('Client disconnected');
+    server.getConnections(function(err, count){
+      console.log('Remaining Connections: ' + count);
+    });
+  });
+  client.on('error', function(err) {
+    console.log('Socket Error: ', JSON.stringify(err));
+  });
+  client.on('timeout', function() {
+    console.log('Socket Timed out');
+  });
+});
+server.listen(8107, function() {
+  console.log('Server listening: ' + JSON.stringify(server.address()));
+  server.on('close', function(){
+    console.log('Server Terminated');
+  });
+  server.on('error', function(err){
+    console.log('Server Error: ', JSON.stringify(err));
+  });
+});
+function writeData(socket, data){
+  var success = !socket.write(data);
+  if (!success){
+    (function(socket, data){
+      socket.once('drain', function(){
+        writeData(socket, data);
+      });
+    })(socket, data);
+  }  
+}
+```
+socket_client
+```
+var net = require('net');
+function getConnection(connName){
+  var client = net.connect({port: 8107, host:'localhost'}, function() {
+    console.log(connName + ' Connected: ');
+    console.log('   local = %s:%s', this.localAddress, this.localPort);
+    console.log('   remote = %s:%s', this.remoteAddress, this.remotePort);
+    this.setTimeout(500);
+    this.setEncoding('utf8');
+    this.on('data', function(data) {
+      console.log(connName + " From Server: " + data.toString());
+      this.end();
+    });
+    this.on('end', function() {
+      console.log(connName + ' Client disconnected');
+    });
+    this.on('error', function(err) {
+      console.log('Socket Error: ', JSON.stringify(err));
+    });
+    this.on('timeout', function() {
+      console.log('Socket Timed Out');
+    });
+    this.on('close', function() {
+      console.log('Socket Closed');
+    });
+  });
+  return client;
+}
+function writeData(socket, data){
+  var success = !socket.write(data);
+  if (!success){
+    (function(socket, data){
+      socket.once('drain', function(){
+        writeData(socket, data);
+      });
+    })(socket, data);
+  }  
+}
+var Dwarves = getConnection("Dwarves");
+var Elves = getConnection("Elves");
+var Hobbits = getConnection("Hobbits");
+writeData(Dwarves, "More Axes");
+writeData(Elves, "More Arrows");
+writeData(Hobbits, "More Pipe Weed");
+```
+####Better Plan
++ [ws模块](https://github.com/websockets/ws)
++ [socket.io](http://socket.io/docs/)
+>参考自[借助Nodejs探究WebSocket](http://www.tuicool.com/articles/AJRnyuf)
+>   [原生WebSocket](http://my.oschina.net/u/1266171/blog/357488)
+
+###子进程
+执行命令
+```
+var childProcess = require('child_process');
+var options = {maxBuffer:100*1024, encoding:'utf8', timeout:5000};
+var child = childProcess.exec('dir /B', options,
+                              function (error, stdout, stderr) {
+  if (error) {
+    console.log(error.stack);
+    console.log('Error Code: '+error.code);
+    console.log('Error Signal: '+error.signal);
+  }
+  console.log('Results: \n' + stdout);
+  if (stderr.length){
+    console.log('Errors: ' + stderr);
+  }
+});
+child.on('exit', function (code) {
+  console.log('Completed with code: '+code);
+});
+```
+执行文件
+```
+var childProcess = require('child_process');
+var options = {maxBuffer:100*1024, encoding:'utf8', timeout:0,cwd:'E:/Desktop/pyqt'};
+var child = childProcess.exec('python test.py', options,
+                              function (error, stdout, stderr) {
+  if (error) {
+    console.log(error.stack);
+    console.log('Error Code: '+error.code);
+    console.log('Error Signal: '+error.signal);
+  }
+  console.log('Results: \n' + stdout);
+  if (stderr.length){
+    console.log('Errors: ' + stderr);
+  }
+});
+child.on('exit', function (code) {
+  console.log('Completed with code: '+code);
+});
+```
+派生子进程
+```
+var child_process = require('child_process');
+var options = {
+    env:{user:'Brad'},
+    encoding:'utf8'
+};
+function makeChild(){
+  var child = child_process.fork('chef.js', [], options);
+  child.on('message', function(message) {
+    console.log('Served: ' + message);
+  });
+  return child;
+}
+function sendCommand(child, command){
+  console.log("Requesting: " + command);
+  child.send({cmd:command});
+}
+var child1 = makeChild();
+var child2 = makeChild();
+var child3 = makeChild();
+sendCommand(child1, "makeBreakfast");
+sendCommand(child2, "makeLunch");
+sendCommand(child3, "makeDinner");
+
+#chef.js
+process.on('message', function(message, parent) {
+  var meal = {};
+  switch (message.cmd){
+    case 'makeBreakfast':
+      meal = ["ham", "eggs", "toast"];
+      break;
+    case 'makeLunch':
+      meal = ["burger", "fries", "shake"];
+      break;
+    case 'makeDinner':
+      meal = ["soup", "salad", "steak"];
+      break;
+  }
+  process.send(meal);
+});
+```
+###进程集群
+HTTP服务器集群
+```
+var cluster = require('cluster');
+var http = require('http');
+if (cluster.isMaster) {
+  cluster.on('fork', function(worker) {
+    console.log("Worker " + worker.id + " created");
+  });
+  cluster.on('listening', function(worker, address) {
+    console.log("Worker " + worker.id +" is listening on " +
+                address.address + ":" + address.port);
+  });
+  cluster.on('exit', function(worker, code, signal) {
+    console.log("Worker " + worker.id +" Exited");
+  });
+  cluster.setupMaster({exec:'cluster_worker.js'});
+  var numCPUs = require('os').cpus().length;
+  for (var i = 0; i < numCPUs; i++) {
+    if (i>=4) break;
+    cluster.fork();
+  }
+  Object.keys(cluster.workers).forEach(function(id) {
+    cluster.workers[id].on('message', function(message){
+      console.log(message);
+    });
+  });
+}
+
+```
+工作进程HTTP服务器
+```
+var cluster = require('cluster');
+var http = require('http');
+if (cluster.isWorker) {
+  http.Server(function(req, res) {
+    res.writeHead(200);
+    res.end("Process " + process.pid + " says hello");
+    process.send("Process " + process.pid + " handled request");
+  }).listen(8080, function(){
+    console.log("Child Server Running on Process: " + process.pid);    
+  });
+}
+```
+HTTP客户端(测试用)
+```
+var http = require('http');
+var options = { port: '8080'};
+function sendRequest(){
+  http.request(options, function(response){
+    var serverData = '';
+    response.on('data', function (chunk) {
+      serverData += chunk;
+    });
+    response.on('end', function () {
+      console.log(serverData);
+    });
+  }).end();
+}
+for (var i=0; i<5; i++){
+  console.log("Sending Request");
+  sendRequest();
+}
+```
 <div id="quickLink">
   <ul>
   </ul>
