@@ -97,3 +97,128 @@ MongoDB数据库
     })
   });
   ```
++ 创建库
+  ```
+  var MongoClient = require('mongodb').MongoClient;
+  MongoClient.connect("mongodb://kimi:19920428@localhost:27017/", {
+        db: { w: 1, native_parser: false },
+        server: {
+          poolSize: 5,
+          socketOptions: { connectTimeoutMS: 500 },
+          auto_reconnect: true
+        },
+        replSet: {},
+        mongos: {}
+      }, function(err, db) {
+                        var newDB=db.db("newDB");
+                        newDB.createCollection("newCollection",function(err,col){
+                          if (!err) {
+                            console.log("Created!")
+                            var test=db.db('newDB');
+                            test.listCollections().toArray(function(err, items) {
+                              console.log(items)
+                            })
+                          }
+                        })
+
+  });
+  ```
++ 分组查询
+  ```
+  var MongoClient = require('mongodb').MongoClient;
+  MongoClient.connect("mongodb://kimi:19920428@localhost/", function(err, db) {
+    var myDB = db.db("words");
+    myDB.collection("word_stats", groupItems);
+    setTimeout(function(){
+      db.close();
+    }, 3000);
+  });
+  function groupItems(err, words){
+    words.group(['first','last'],
+                {first:'o',last:{$in:['a','e','i','o','u']}},
+                {"count":0},
+                function (obj, prev) { prev.count++; }, true,
+                function(err, results){
+          console.log("\n'O' words grouped by first and last" +
+                      " letter that end with a vowel: ");
+          console.log(results);
+    });
+    words.group(['first'],
+                {size:{$gt:13}},
+                {"count":0, "totalVowels":0},
+                function (obj, prev) {
+                  prev.count++; prev.totalVowels += obj.stats.vowels;
+                }, {}, true,
+                function(err, results){
+      console.log("\nWords grouped by first letter larger than 13: ");
+      console.log(results);
+    });
+    words.group(['first'],{}, {"count":0, "vowels":0, "consonants":0},
+                function (obj, prev) {
+                  prev.count++;
+                  prev.vowels += obj.stats.vowels;
+                  prev.consonants += obj.stats.consonants;
+                },function(obj){
+                  obj.total = obj.vowels + obj.consonants;
+                }, true,
+                function(err, results){
+          console.log("\nWords grouped by first letter with totals: ");
+          console.log(results);
+    });
+  }
+  ```
+
++ 聚合查询
+  ```
+  var MongoClient = require('mongodb').MongoClient;
+  MongoClient.connect("mongodb://kimi:19920428@localhost/", function(err, db) {
+    var myDB = db.db("words");
+    myDB.collection("word_stats", aggregateItems);
+    setTimeout(function(){
+      db.close();
+    }, 3000);
+  });
+  function aggregateItems(err, words){
+    words.aggregate([{$match: {first:{$in:['a','e','i','o','u']}}},
+                     {$group: {_id:"$first",
+                               largest:{$max:"$size"},
+                               smallest:{$min:"$size"},
+                               total:{$sum:1}}},
+                     {$sort: {_id:1}}],
+                function(err, results){
+      console.log("Largest and smallest word sizes for " +
+                  "words beginning with a vowel: ");
+      console.log(results);
+    });
+    words.aggregate([{$match: {size:4}},
+                     {$limit: 5},
+                     {$project: {_id:"$word", stats:1}}],
+                function(err, results){
+      console.log("Stats for 5 four letter words: ");
+      console.log(results);
+    });
+    words.aggregate([{$group: {_id:"$first", average:{$avg:"$size"}}},
+                      {$sort: {average:-1}},
+                      {$limit: 5}],
+                function(err, results){
+      console.log("Letters with largest average word size: ");
+      console.log(results);
+    });
+  }
+  ```
+
+###使用Mongoose来实现ORM
++ 连接到MongoDB并列出表
+  ```
+  var mongoose = require('mongoose');
+  mongoose.connect('mongodb://kimi:19920428@localhost:27017/');
+  mongoose.connection.on('open', function(){
+    mongoose.connection.db.db("test").listCollections().toArray(function(err,items){
+      console.log(items);
+    });
+    mongoose.connection.db.db("words").listCollections().toArray(function(err, names){
+      console.log(names);
+      mongoose.disconnect();
+    });
+  });
+  ```
