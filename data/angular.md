@@ -206,6 +206,61 @@ angular.module('myApp', []).
   }]);
 ```
 
+###自定义服务
+
++ service_custom.js
+
+```
+var app = angular.module('myApp', []);
+app.value('censorWords', ['bad','mad','sad']);
+app.constant('repString', "****");
+app.factory('censorF', ['censorWords', 'repString',
+                        function (cWords, repString) {
+  return function(inString) {
+    var outString = inString;
+    for(i in cWords){
+      outString = outString.replace(cWords[i], repString);
+    }
+    return outString;
+  };
+}]);
+function CensorObj(cWords, repString) {
+  this.censor = function(inString){
+    var outString = inString;
+    for(i in cWords){
+      outString = outString.replace(cWords[i], repString);
+    }
+    return outString;
+  };
+}
+app.service('censorS', ['censorWords', 'repString', CensorObj]);
+app.controller('myController', ['$scope', 'censorF', 'censorS',
+                                function($scope, censorF, censorS) {
+    $scope.censoredByFactory = censorF("mad text");
+    $scope.censoredByService = censorS.censor("bad text");
+  }]);
+```
+
++ service_custom.html
+
+```
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>AngularJS $animate Service</title>
+</head>
+<body>
+  <div ng-controller="myController">
+    <h3>Image Animation:</h3>
+    {{censoredByFactory}}
+    {{censoredByService}}
+  </div>
+  <script src="/js/angular.min.js"></script>
+  <script src="/js/service_custom.js"></script>
+</body>
+</html>
+```
+
 <div id="quickLink">
   <ul>
   </ul>
