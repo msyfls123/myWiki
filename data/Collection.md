@@ -1,4 +1,5 @@
 ![Girl](imgs/girl.jpg)
+![Beauty](imgs/beauty.jpg)
 
 ##Inspiration
 协同式交互体验
