@@ -33,7 +33,7 @@
 
 <span id="codeT"></span>
 ####__代码__
-  
+
     //读取商品价格
     price=document.getElementsByTagName('strong');
     var list=new Array();
@@ -341,12 +341,6 @@ __代码文件：__[所得数据文件](store/tmall_js/data.csv) / [Javascript�
 _2015.9_
 _作于佛山顺德_
 
-<div id="quickLink">
-  <ul>
-  </ul>
-</div>
-<div id="backTop" data-toggle="tooltip" title="飞" ></div>
-<script src="files/js/scrollTab.js"></script>
 <script type="text/javascript">
   $(function() {
     $('body>#main #content a').not(".flow-img").tooltip({placement:"top",title:"不知道是什么，点我试一下吧"})

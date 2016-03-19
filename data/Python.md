@@ -217,10 +217,3 @@ for infile in sys.argv[1:]:
         except IOError:
             print("cannot create thumbnail for", infile)
 ```
-
-<div id="quickLink">
-  <ul>
-  </ul>
-</div>
-<div id="backTop" data-toggle="tooltip" title="飞" ></div>
-<script src="files/js/scrollTab.js"></script>

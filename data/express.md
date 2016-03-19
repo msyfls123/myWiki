@@ -230,10 +230,3 @@ app.post('/login', function(req, res){
 });
 app.listen(8888);
 ```
-
-<div id="quickLink">
-  <ul>
-  </ul>
-</div>
-<div id="backTop" data-toggle="tooltip" title="飞" ></div>
-<script src="files/js/scrollTab.js"></script>

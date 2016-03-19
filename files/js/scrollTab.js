@@ -1,5 +1,6 @@
-$("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标题将其加到quickLink中去
-			
+var ins = function(){
+			$("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标题将其加到quickLink中去
+
 			$("h3,h4,h5").each(function(){        //获取每个标题将其加到quickLink中去
 				if ($(this).is("h3")) {
 					$("#quickLink ul").append("<li class='s'>"+$(this).text()+"</li>");
@@ -14,8 +15,14 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 					$('html, body').animate({scrollTop: $("h3,h4,h5").eq(i).offset().top-60}, 1000); return false;
 				})
 			})
+			$("#backTop").click(function(){
+				$('body,html').animate({scrollTop:"0px"}, 1000); return false;
+			});
+		};
+		// ins();
+
 			var quickH = 600;
-			
+
 			function scrollEvent4(){            //固定右侧quickLink
 				var scroH = $(this).scrollTop();
 				if(scroH>=quickH){
@@ -39,7 +46,7 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 						}else{
 							$("#quickLink li:eq("+i+")").removeClass("get");
 						}
-					}	
+					}
 				};
 			};
 
@@ -58,9 +65,7 @@ $("#quickLink").prepend("<p>"+$("h1:eq(1)").text()+"</p>")    //获取文章标�
 
 			$(window).scroll(function(){scrollEvent4();scrollEvent5();scrollEvent6()});   //注册固定导航栏事件
 
-			$("#backTop").click(function(){ 
-			$('body,html').animate({scrollTop:"0px"}, 1000); return false;
-		});
+
 
 // canvas绘图
 /*if (!ctx) {

@@ -14,10 +14,10 @@ Django项目部署
 + Pillow 2.3.0
 
 ####创建站点目录`/home/mysite`
-	
+
 	django-admin startproject mysite
 ####创建static和media目录
-	
+
 	mkdir static, media
 ####目录结构
 
@@ -27,7 +27,7 @@ Django项目部署
 	└─ mysite
 		├─ manage.py
 		├─ static
-		├─ templates┐ 
+		├─ templates┐
 		├─ someapp  ├─ 40X.html
 		└─ mysite   └─ 50X.html
 		    ├─ setting.py
@@ -100,7 +100,7 @@ Django项目部署
 	mysql> FLUSH PRIVILEGES;
 
 ####安装MySQLdb
-	
+
 	pip install mysql-python
 
 ####更新数据库连接
@@ -169,12 +169,12 @@ Django项目部署
 注意，请确定`django_wsgi.py`文件已经存在了。
 
 新建一个XML文件：`django_socket.xml`，将它放在 `/home/mysite` 目录下：
-	
+
 	<uwsgi>
     <socket>:8077</socket>
     <chdir>/home/mysite</chdir>
     <module>django_wsgi</module>
-    <processes>4</processes> <!-- 进程数 --> 
+    <processes>4</processes> <!-- 进程数 -->
     <daemonize>uwsgi.log</daemonize>
 	</uwsgi>
 
@@ -261,10 +261,3 @@ Django项目部署
 ###[示例文件](store/demo.zip)
 
 >参考自[五步教你实现使用Nginx+uWSGI+Django方法部署Django程序(上)](http://www.django-china.cn/topic/101/)[(下)](http://www.django-china.cn/topic/124/)
-
-<div id="quickLink">
-  <ul>
-  </ul>
-</div>
-<div id="backTop" data-toggle="tooltip" title="飞" ></div>
-<script src="files/js/scrollTab.js"></script>

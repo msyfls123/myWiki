@@ -28,7 +28,7 @@ Markdown是一个很多程序员都喜欢的标记性语言，很多知名博客
 	        extras=["fenced-code-blocks", "cuddled-lists", "metadata", "tables", "spoiler"]))
 
 现在`templatetags`文件夹就相当于你自己的一个包了。它的使用很简单，在需要的网页中引入`custom_markdown`，然后在需要进行markdown的地方markdown就行了，如下：
-	
+
 	{% load custom_markdown %}
 	{{ article.content|custom_markdown }}
 
@@ -54,7 +54,7 @@ __效果__
 ###后台pagedown编辑器
 完成前面的两步后我们，可能还需要在后台的文章编辑部分使用markdown的编辑器，这里使用的是django-pagedown编辑器
 。django-pagedown完美支持markdown语法，还能边写边预览，如果你觉得原生的界面比较丑的化还可以自己重写css。
-	
+
 	#安装django-pagedown
 	pip install django-pagedown
 
@@ -98,15 +98,15 @@ __效果__
 	## Markdown plus h2 with a custom ID ##         {#id-goes-here}
 	[Link back to H2](#id-goes-here)
 
-	This is a paragraph, which is text surrounded by whitespace. Paragraphs can be on one 
+	This is a paragraph, which is text surrounded by whitespace. Paragraphs can be on one
 	line (or many), and can drone on for hours.  
 
-	Here is a Markdown link to [Warped](https://warpedvisions.org), and a literal <http://link.com/>. 
+	Here is a Markdown link to [Warped](https://warpedvisions.org), and a literal <http://link.com/>.
 	Now some SimpleLinks, like one to [google] (automagically links to are-you-
-	feeling-lucky), a [wiki: test] link to a Wikipedia page, and a link to 
+	feeling-lucky), a [wiki: test] link to a Wikipedia page, and a link to
 	[foldoc: CPU]s at foldoc.  
 
-	Now some inline markup like _italics_,  **bold**, and `code()`. Note that underscores in 
+	Now some inline markup like _italics_,  **bold**, and `code()`. Note that underscores in
 	words are ignored in Markdown Extra.
 
 	![picture alt](/images/photo.jpeg "Title is optional")     
@@ -150,8 +150,8 @@ __效果__
 	--------------------------
 
 	<div class="custom-class" markdown="1">
-	This is a div wrapping some Markdown plus.  Without the DIV attribute, it ignores the 
-	block. 
+	This is a div wrapping some Markdown plus.  Without the DIV attribute, it ignores the
+	block.
 	</div>
 
 	## Markdown plus tables ##
@@ -180,10 +180,3 @@ __效果__
 	*[ABBR]: Markdown plus abbreviations (produces an <abbr> tag)
 
 >参考自[django1.8下的markdown、highlight、pagedown解决](http://segmentfault.com/a/1190000003933331)
-
-<div id="quickLink">
-  <ul>
-  </ul>
-</div>
-<div id="backTop" data-toggle="tooltip" title="飞" ></div>
-<script src="files/js/scrollTab.js"></script>

@@ -56,7 +56,7 @@ Django 提供内置的视图(view)函数用于处理登录和退出(以及其他
 2.login页面采用`django.contrib.auth.views.login`的视图函数，这里没有给出
 3.`auth.logout(request)`会将`request`的user对象注销，并处理`sessionid`等cookie
 
-	from django.template import loader, RequestContext 
+	from django.template import loader, RequestContext
 	from django.shortcuts import render_to_response
 	from django.http import HttpResponseRedirect
 	from django.contrib.auth.decorators import login_required
@@ -71,7 +71,7 @@ Django 提供内置的视图(view)函数用于处理登录和退出(以及其他
 	        'ip_address': request.META['REMOTE_ADDR'],
 	    }
 
-	 
+
 	@login_required(login_url="/login/")  
 	def profile(request):  
 
@@ -118,7 +118,7 @@ Django 提供内置的视图(view)函数用于处理登录和退出(以及其他
 	                <td>{{ form.password }}</td>  
 	            </tr>  
 	            </table>  
-	  
+
 	        <input type="submit" value="login" />  
 	        <input type="hidden" name="next" value="{{ next }}" />  
 	    </form>  
@@ -161,11 +161,4 @@ Django 提供内置的视图(view)函数用于处理登录和退出(以及其他
 ###效果图
 ![用户详情页面](imgs/auth.jpg)
 
->参考自[Django用户认证系统　authentication system](http://blog.csdn.net/feelang/article/details/24992693)	
-
-<div id="quickLink">
-  <ul>
-  </ul>
-</div>
-<div id="backTop" data-toggle="tooltip" title="飞" ></div>
-<script src="files/js/scrollTab.js"></script>
+>参考自[Django用户认证系统　authentication system](http://blog.csdn.net/feelang/article/details/24992693)
