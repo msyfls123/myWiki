@@ -15,6 +15,7 @@
 + [Markdown功能](Markdown)
 + [缩略图](Thumb)
 -------
++ [Handlebars模板](handlebars)
 + [自定义滚动条](http://manos.malihu.gr/jquery-custom-content-scroller/#configuration-section)
 + [Gulp入门](http://segmentfault.com/a/1190000000372547) [API](http://www.ydcss.com/archives/424)
 + [渐进式JPG](http://www.phperz.com/article/16/0123/38858.html) [Photoshop](http://www.jb51.net/photoshop/182198.html)
