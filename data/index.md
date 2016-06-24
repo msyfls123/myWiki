@@ -2,6 +2,7 @@ Because it's there
 ===
 
 ###汇总类###
++ [233333](Laugh)
 + [实习报告](Report)
 + [Collection](Collection)
 
