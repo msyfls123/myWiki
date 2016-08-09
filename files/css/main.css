@@ -182,8 +182,11 @@ body>#main #content .img-box {
 body>#main #content .img-box img {
 	padding: 0;
 	display: block;
-	margin: 0 auto;
-	max-width: 100%;
+	margin: 10px auto;
+	max-width: 85%;
+	border: 5px solid #CCC;
+	border-radius: 5px;
+	box-sizing: border-box;
 }
 body>#main #content blockquote {
 	background:#f0f0f0 url(../../imgs/quotell.png) no-repeat 30px 10px;
