@@ -2,6 +2,7 @@ Because it's there
 ===
 
 ###汇总类###
++ [豆瓣](douban)
 + [233333](Laugh)
 + [蜗牛实习](woniu)
 + [实习报告](Report)
