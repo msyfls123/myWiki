@@ -1,213 +1,213 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-	<head>
-		<meta charset="utf-8">
-		<meta name="renderer" content="webkit">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>myWiki</title>
-		<meta content="老马的个人wiki,也可以说是blog……anything you like to call it" name="description">
-		<link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>myWiki</title>
+    <meta content="老马的个人wiki,也可以说是blog……anything you like to call it" name="description">
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
 
-		<!-- Bootstrap -->
-		<link href="files/css/bootstrap.min.css" rel="stylesheet">
-		<link href="files/css/tomorrow.css" rel="stylesheet">
-		<link href="files/css/main.css" rel="stylesheet">
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="files/js/jquery.min.js"></script>
-		<script src="files/js/marked.js"></script>
-		<script src="files/js/highlight.js"></script>
+    <!-- Bootstrap -->
+    <link href="files/css/bootstrap.min.css" rel="stylesheet">
+    <link href="files/css/tomorrow.css" rel="stylesheet">
+    <link href="files/css/main.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="files/js/jquery.min.js"></script>
+    <script src="files/js/marked.js"></script>
+    <script src="files/js/highlight.js"></script>
 
-		<!-- My CSS and JS -->
-		<!-- <link href='http://www.youziku.com/webfont/NameCSS/41545' rel='stylesheet' type='text/css'/> -->
-		<link rel="stylesheet" href="files/css/imgbox.css" />
-		<script type="text/javascript" src="files/js/d3.min.js"></script>
-		<script type="text/javascript" src="files/js/jquery.imgbox.js"></script>
-		<script type="text/javascript" src="files/js/html5_3d_animation.js"></script>
-		<script type="text/javascript" src="files/js/scrollTab.js"></script>
+    <!-- My CSS and JS -->
+    <!-- <link href='http://www.youziku.com/webfont/NameCSS/41545' rel='stylesheet' type='text/css'/> -->
+    <link rel="stylesheet" href="files/css/imgbox.css" />
+    <script type="text/javascript" src="files/js/d3.min.js"></script>
+    <script type="text/javascript" src="files/js/jquery.imgbox.js"></script>
+    <script type="text/javascript" src="files/js/html5_3d_animation.js"></script>
+    <script type="text/javascript" src="files/js/scrollTab.js"></script>
 
-		<script>
-			// 获取 get 参数的函数
-			function QueryGET(TheName){
-				var urlt = window.location.href.split("?");
-				if(!urlt[1]){}else{
-					var clearurl = urlt[1].split("#");
-					var gets = clearurl[0].split("&");
-					for(var i=0;i<gets.length;i++){
-						var get = gets[i].split("=");
-						if(get[0] == TheName){
-							var TheValue = get[1];
-							break;
-						}
-					}
-				}
-				return TheValue;
-			}
-			function line_code(num){
-				canvas = document.getElementById('line_num_canvas');
-				if (canvas.getContext) {
-					ctx = canvas.getContext('2d');
-				}
-				if(num<10){num='0'+String(num)}
-				canvas.width = 66;
-				canvas.height = 28;
-				ctx.font = "10px Arial";
-				// 设置对齐方式
-				ctx.textAlign = "right";
-				// 设置填充颜色
-				ctx.fillStyle = "#bbb";
-				// 设置字体内容，以及在画布上的位置
-				ctx.fillText(num, 65, 16);
-				// 返回图像
-				var image = new Image();
-				return canvas.toDataURL("image/png");
-			}
-			$(document).ready(function(){
-				// 运行代码高亮库
-				hljs.initHighlightingOnLoad();
-				// 设置 Markdown 转换时代码高亮函数
-				marked.setOptions({
-					highlight: function (code,lang) {
-						return hljs.highlightAuto(code).value;
-					}
-				});
-				var renderer = new marked.Renderer();
-				renderer.image = function(href, title, text){
-					return '<div class="img-box"><img src="'+href+'" alt="'+text+'" /></div>';
-				};
-				renderer.link = function(href, title, text){
-					var reg = new RegExp("^[\\w\\-\\:]+$");
-					if(reg.test(href)){
-						return '<a href="index.html?name='+href+'">'+text+'</a>';
-					}else{
-						return '<a href="'+href+'" target="_blank">'+text+'</a>';
-					}
-				};
-				// 分析地址，获取源文件地址
-				var dirurl="data";
-				name = QueryGET("name");
-				if(!name || name == undefined || name == "undefined"){
-					dirurl += "/index";
-				}else{
-					subnames = name.split(":");
-					for(i in subnames){
-						dirurl += "/" +subnames[i];
-					};
-				}
-				fileurl = dirurl + ".md";
-				// 请求 Markdown 文件
-				$.ajax({
-					url:fileurl,
-					async:true,
-					dataType:"text",
-					error:function(){
-						$("#content").html('<h3>该页面还不存在哦～</h3>');
-					},
-					success:function(markdownString){
-						// 将转换好的内容写入页面
-						$("#content").html(function(){
-							return marked(markdownString,{ renderer: renderer });
-						});
-						// 代码高亮加行号
-						$('pre code').each(function(){
-							var thecode = $(this).html().split('\n');
-							var code = "";
-							for(k in thecode){
-								if(!thecode[k] && k == (thecode.length-1)){}else{
-									m=k+1;
-									code +='<div class="code-line"><div class="line-num" style="background:url('+line_code(Number(k)+1)+') top right no-repeat;"></div>'+thecode[k]+'</div>';
-								}
-							}
-							$(this).html(code);
-						});
+    <script>
+      // 获取 get 参数的函数
+      function QueryGET(TheName){
+        var urlt = window.location.href.split("?");
+        if(!urlt[1]){}else{
+          var clearurl = urlt[1].split("#");
+          var gets = clearurl[0].split("&");
+          for(var i=0;i<gets.length;i++){
+            var get = gets[i].split("=");
+            if(get[0] == TheName){
+              var TheValue = get[1];
+              break;
+            }
+          }
+        }
+        return TheValue;
+      }
+      function line_code(num){
+        canvas = document.getElementById('line_num_canvas');
+        if (canvas.getContext) {
+          ctx = canvas.getContext('2d');
+        }
+        if(num<10){num='0'+String(num)}
+        canvas.width = 66;
+        canvas.height = 28;
+        ctx.font = "10px Arial";
+        // 设置对齐方式
+        ctx.textAlign = "right";
+        // 设置填充颜色
+        ctx.fillStyle = "#bbb";
+        // 设置字体内容，以及在画布上的位置
+        ctx.fillText(num, 65, 16);
+        // 返回图像
+        var image = new Image();
+        return canvas.toDataURL("image/png");
+      }
+      $(document).ready(function(){
+        // 运行代码高亮库
+        hljs.initHighlightingOnLoad();
+        // 设置 Markdown 转换时代码高亮函数
+        marked.setOptions({
+          highlight: function (code,lang) {
+            return hljs.highlightAuto(code).value;
+          }
+        });
+        var renderer = new marked.Renderer();
+        renderer.image = function(href, title, text){
+          return '<div class="img-box"><img src="'+href+'" alt="'+text+'" /></div>';
+        };
+        renderer.link = function(href, title, text){
+          var reg = new RegExp("^[\\w\\-\\:]+$");
+          if(reg.test(href)){
+            return '<a href="index.html?name='+href+'">'+text+'</a>';
+          }else{
+            return '<a href="'+href+'" target="_blank">'+text+'</a>';
+          }
+        };
+        // 分析地址，获取源文件地址
+        var dirurl="data";
+        name = QueryGET("name");
+        if(!name || name == undefined || name == "undefined"){
+          dirurl += "/index";
+        }else{
+          subnames = name.split(":");
+          for(i in subnames){
+            dirurl += "/" +subnames[i];
+          };
+        }
+        fileurl = dirurl + ".md";
+        // 请求 Markdown 文件
+        $.ajax({
+          url:fileurl,
+          async:true,
+          dataType:"text",
+          error:function(){
+            $("#content").html('<h3>该页面还不存在哦～</h3>');
+          },
+          success:function(markdownString){
+            // 将转换好的内容写入页面
+            $("#content").html(function(){
+              return marked(markdownString,{ renderer: renderer });
+            });
+            // 代码高亮加行号
+            $('pre code').each(function(){
+              var thecode = $(this).html().split('\n');
+              var code = "";
+              for(k in thecode){
+                if(!thecode[k] && k == (thecode.length-1)){}else{
+                  m=k+1;
+                  code +='<div class="code-line"><div class="line-num" style="background:url('+line_code(Number(k)+1)+') top right no-repeat;"></div>'+thecode[k]+'</div>';
+                }
+              }
+              $(this).html(code);
+            });
 
-						// 设置页面标题
-						pagetitle=$("#content").find(":header:first").text();
-						if(pagetitle != ""){
-							$("title").text(pagetitle + " - Kimi's Wiki");
-						}
+            // 设置页面标题
+            pagetitle=$("#content").find(":header:first").text();
+            if(pagetitle != ""){
+              $("title").text(pagetitle + " - Kimi's Wiki");
+            }
 
-						$(".ds-thread").attr({
-								"data-thread-key":window.location.pathname+window.location.search,
-								"data-title":$("#content").find(":header:first").text(),
-								"data-url":window.location.href
-						})
-						ins();
-					}
-				});
-			});
-		</script>
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<canvas id="cas"></canvas>
-		<div id="header">
-			<a href="?" target="_self" data-toggle="tooltip" title="回到Wiki | 电脑线圈 電脳コイル" ><img src="imgs/Pic.jpg"></a>
-			<a href="http://msyfls123.github.io/"><h1  title="回到我的主页 | 星际迷航 Star Trek" >To Boldly Go Where No One Has Gone Before</h1></a>
-			<script type="text/javascript">
-			  $(function() {
-			    $('#header a:eq(0)').tooltip({placement:"right"})
-			    $('#header h1').tooltip({placement:"bottom"})
-			  })
-			</script>
-		</div> <!-- #header End -->
-		<div id="foobar"></div>
-		<div id="main" class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div id="content">
-						<!-- <img src="imgs/preloader.gif"> -->
-						<h2>Loading………</h2>
-						<p>如看到此行文字超过15秒，请检查网络链接，并升级至Chrome/Firefox/IE9以上浏览器</p>
-					</div>
+            $(".ds-thread").attr({
+                "data-thread-key":window.location.pathname+window.location.search,
+                "data-title":$("#content").find(":header:first").text(),
+                "data-url":window.location.href
+            })
+            ins();
+          }
+        });
+      });
+    </script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <canvas id="cas"></canvas>
+    <div id="header">
+      <a href="?" target="_self" data-toggle="tooltip" title="回到Wiki | 电脑线圈 電脳コイル" ><img src="imgs/Pic.jpg"></a>
+      <a href="http://msyfls123.github.io/"><h1  title="回到我的主页 | 星际迷航 Star Trek" >To Boldly Go Where No One Has Gone Before</h1></a>
+      <script type="text/javascript">
+        $(function() {
+          $('#header a:eq(0)').tooltip({placement:"right"})
+          $('#header h1').tooltip({placement:"bottom"})
+        })
+      </script>
+    </div> <!-- #header End -->
+    <div id="foobar"></div>
+    <div id="main" class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div id="content">
+            <!-- <img src="imgs/preloader.gif"> -->
+            <h2>Loading………</h2>
+            <p>如看到此行文字超过15秒，请检查网络链接，并升级至Chrome/Firefox/IE9以上浏览器</p>
+          </div>
 
-					<!-- 多说评论框 start -->
-					<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
-					<!-- 多说评论框 end -->
-					<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-					<script type="text/javascript">
-					var duoshuoQuery = {short_name:"msyfls123wiki"};
-						(function() {
-							var ds = document.createElement('script');
-							ds.type = 'text/javascript';ds.async = true;
-							ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-							ds.charset = 'UTF-8';
-							(document.getElementsByTagName('head')[0]
-							 || document.getElementsByTagName('body')[0]).appendChild(ds);
-						})();
-						</script>
-						<script type="text/javascript">
-							$(".ds-thread").attr({
-								"data-thread-key":window.location.pathname+window.location.search,
-								"data-title":$("#content").find(":header:first").text(),
-								"data-url":window.location.href
-							})
-						</script>
-					<!-- 多说公共JS代码 end -->
+          <!-- 多说评论框 start -->
+          <div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+          <!-- 多说评论框 end -->
+          <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+          <script type="text/javascript">
+          var duoshuoQuery = {short_name:"msyfls123wiki"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0]
+               || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+            <script type="text/javascript">
+              $(".ds-thread").attr({
+                "data-thread-key":window.location.pathname+window.location.search,
+                "data-title":$("#content").find(":header:first").text(),
+                "data-url":window.location.href
+              })
+            </script>
+          <!-- 多说公共JS代码 end -->
 
-				</div>
-			</div>
-		</div><!-- #content End -->
+        </div>
+      </div>
+    </div><!-- #content End -->
 
-		<div id="footer">
-			Power by <a href="https://github.com/dmscode/Wiki-in-box">Wiki in box</a>
-		</div> <!-- #footer End -->
-		<div style="display:none">
-			<canvas id="line_num_canvas"></canvas>
-		</div>
+    <div id="footer">
+      Power by <a href="https://github.com/dmscode/Wiki-in-box">Wiki in box</a>
+    </div> <!-- #footer End -->
+    <div style="display:none">
+      <canvas id="line_num_canvas"></canvas>
+    </div>
 
-		<div id="quickLink">
-		  <ul>
-		  </ul>
-		</div>
-		<div id="backTop" data-toggle="tooltip" title="飞" ></div>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="files/js/bootstrap.min.js"></script>
+    <div id="quickLink">
+      <ul>
+      </ul>
+    </div>
+    <div id="backTop" data-toggle="tooltip" title="飞" ></div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="files/js/bootstrap.min.js"></script>
 
-	</body>
+  </body>
 </html>
