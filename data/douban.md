@@ -46,10 +46,18 @@ path2 指向 path1
 全文件调整缩进
 + `:%s/\t/  /g`  
 全文件替换`Tab`为`Space*2`
++ `:%s/\r//g`  
+全文件删除行末^M
++ `d`  
+  `"testdfat"`  假设光标停留在第一个t位置  
+  `di"`：delete all content inside "，结果字符串为""  
+  `dta`：delete all content to a，结果字符串为"at"  
+  `dfa`：delete all content from current location, until a is found，结果字符串为"t"
 
 ###Webpack
-+ `new webpack.optimize.CommomChunkPlugin('vendor', 'vendor.js')`  
-提取公共模块打包
++ 样例（已配置react-es6全家桶）   
+  [webpack.config.js](https://github.com/msyfls123/react-demo/blob/master/webpack.config.js)   
+  [package.json](https://github.com/msyfls123/react-demo/blob/master/package.json)
 
 ###Vim comfig demo
 ```
@@ -117,7 +125,7 @@ inoremap <leader><leader> <C-x><C-o>
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 nmap <leader>v "+gp  
-nmap <leader>c "+y 
+nmap <leader>c "+y
 " nerd tree
 let NERDTreeQuitOnOpen=1 "打开文件时关闭树
 let NERDTreeShowBookmarks=1 "显示书签
