@@ -168,18 +168,21 @@ pre code .code-line {
 	position: relative;
 	min-height: 1.6em;
 	font-size: 0.73em;
+	line-height: 1.6em;
 	padding-left: 1.2em;
 }
-pre code .code-line:hover{
-	background: #fbfbfb;
+
+pre code .code-line:nth-child(2n+1) {
+	background-color: #f0f0f0;
 }
+
 pre code .code-line .line-num {
 	position: absolute;
 	left: -77px;
 	width: 73px;
 	height: 100%;
 	padding: 0 5px;
-	margin-top:-4px;
+	margin-top: -2px;
 	text-align: right;
 	color: #999;
 }
@@ -465,4 +468,5 @@ body>#header.scroll h1 {
     font-family: 'kimifont'!important;
 		line-height: 1.4em;
     font-size: 2em;
+		text-align: center;
 }
