@@ -6,7 +6,7 @@
 立即应用bash的设置
 + `ln -sf path1 path2`  
 path2 指向 path1
-+ `find ./ -name '*.* | xargs grep 'data'`  
++ `find ./ -name '*.*' | xargs grep 'data'`  
 在./下寻找包含data字样的任意名称后缀名的文件
 + `ps aux | grep name`  
 查找name创建的进程
@@ -54,12 +54,19 @@ path2 指向 path1
   `dta`：delete all content to a，结果字符串为"at"  
   `dfa`：delete all content from current location, until a is found，结果字符串为"t"
 
+###Javascript
++ 有浏览器会阻止异步 ajax 提交 form 的操作，需要将 ajax 请求设置为 `async: false` 即 `sync` 请求
+
 ###Webpack
 + 样例（已配置react-es6全家桶）   
   [webpack.config.js](https://github.com/msyfls123/react-demo/blob/master/webpack.config.js)   
   [package.json](https://github.com/msyfls123/react-demo/blob/master/package.json)
 
-###Vim comfig demo
+###Joke
++ 2 本 Python 书籍的读者读完了爬虫章节后直接转头来爬我们的 js 接口...
++ 事故是常态，常态只是对事故的一次深层封装而已
+
+###Vim config demo
 ```
 set nocompatible             " be iMproved, required
 filetype off                  " required
