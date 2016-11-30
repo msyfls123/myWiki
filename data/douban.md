@@ -56,6 +56,17 @@ path2 指向 path1
 
 ###Javascript
 + 有浏览器会阻止异步 ajax 提交 form 的操作，需要将 ajax 请求设置为 `async: false` 即 `sync` 请求
++ document Element.nodeType
+  ```
+  节点类型       描述                            子节点
+  1	Element	 代表元素	                Element, Text, Comment, ProcessingInstruction, CDATASection, EntityReference
+  2	Attr     代表属性	                Text, EntityReference
+  3	Text     代表元素或属性中的文本内容。	None
+  ```
++ cssText
+  ```
+  element.style.cssText = 'font-size: 24px'
+  ```
 
 ###Webpack
 + 样例（已配置react-es6全家桶）   
