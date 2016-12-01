@@ -8,7 +8,7 @@
 + `:x && exit`
 + 可以用 ssh key 登陆了
 
-### Nginxa安装
+### Nginx安装
 + `wget http://nginx.org/download/nginx-1.10.2.tar.gz`
 + `tar zxvf nginx-1.10.2.tar.gz`
 + `wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz`
@@ -28,8 +28,8 @@
   make && make install
   ```
 
-+ 一般会失败需要安装`openssl zlib`等  
-  `apt-get install libtool g++ openssl libssl-dev libperl-dev`
++ 一般会失败需要安装`make openssl zlib`等  
+  `apt-get install make libtool g++ openssl libssl-dev libperl-dev`
 
 ### 配置Nginx
 + 增加 www / www
@@ -62,7 +62,9 @@
   gzip_buffers     4 16k;
   gzip_http_version 1.0;
   gzip_comp_level 2;
-  gzip_types       text/plain application/x-javascript text/css application/xml;
+  gzip_types       text/plain text/css text/javascript
+                   application/javascript application/x-javascript application/json application/xml
+                   image/jpg image/png image/jpeg;
   gzip_vary on;
 
   include /opt/server/nginx/conf/vhosts/*.conf;
@@ -134,5 +136,51 @@
 + `echo '/dev/vdb1 /data ext3 defaults 0 0' >> /etc/fstab`
 +  `df -h` 查看挂载结果
 + 参见 [HERE](https://www.qcloud.com/document/product/213/2974)
+
+### 安装 MySQL
++ 安装
+  ```
+  apt-get install mysql-server
+  apt-get install mysql-client
+  apt-get install libmysqlclient-dev
+  ```
++ 迁移数据
+  ```
+  service mysql stop
+  mysqld stop
+  mysqladmin shutdown
+
+  ... 直到访问不了 mysql -uroot -p
+
+  mv /var/lib/mysql /data/mysql
+  ln -s /data/mysql /var/lib/mysql
+  chown -R mysql:mysql /data/mysql
+  chown -R mysql:mysql /var/lib/mysql
+  ```
++ 以上只是准备工作，具体看[这里](http://www.serveridol.com/2014/09/05/innodb-the-error-means-mysqld-does-not-have-the-access-rights-to/)
+  ```
+  vim /etc/apparmor.d/usr.sbin.mysqld
+  add --------
+  /data/mysql/ r,
+  /data/mysql/** rwk,
+  ------------
+  /etc/init.d/apparmor restart
+  mysql_install_db
+  service mysql start
+  ```
++ 感觉身体被掏空
+
+### 安装 `nodejs & npm`
++ 安装
+  ```
+  apt-get install nodejs
+  apt-get install npm
+  npm config set prefix '/usr/local'
+  mv /usr/local/lib/node_modules /data/node_modules
+  ln -s /data/node_modules /usr/local/lib/node_modules
+  npm i n -g
+  n
+  ```
++ 开始愉快玩耍吧
 
 ### 继续折腾吧~
