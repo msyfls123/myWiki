@@ -183,5 +183,24 @@
   ```
 + 开始愉快玩耍吧
 
+### 安装 `MongoDB`
++ `wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.4.0.tgz`
++ `tar -zxvf mongodb-linux-x86_64-ubuntu1404-3.4.0.tgz`
++ `mv mongodb-linux-x86_64-ubuntu1404-3.4.0 /usr/local/mongodb`
++ touch `/etc/mongodb.log`
+  ```
+  port=27017
+  bind_ip=127.0.0.1
+  dbpath=/path/mongod/data
+  logpath=/path/mongod.log
+  pidfilepath=/path/mongod.pid
+  logappend=true
+  fork=true
+  ```
++ `ln -s /usr/local/mongodb/bin/mongod /usr/bin/mongod`
++ `ln -s /usr/local/mongodb/bin/mongo /usr/bin/mongo`
++ 启动 `mongod -f /etc/mongodb.conf`
++ 关闭 `mongod --shutdowm -f /etc/mongodb.conf`
+
 ### Flask
 + [初探flask](flask)
