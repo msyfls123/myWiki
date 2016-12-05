@@ -14,6 +14,21 @@ path2 指向 path1
 查看文件所有者
 + `chmod a+x filename`  
 文件变可执行
++ bash 示例
+  ```
+  #!/bin/bash
+  for i in $(ls | grep 'hello')
+  do
+    mv $i '../'
+    echo 'test'
+  done
+  ```
++ 批量替换字符串
+  ```
+  grep -rl "被替换的字符串"
+  grep -rl "被替换的字符串" *|xargs -i sed -i 's/被替换的字符串/替换的字符串/g' "{}"
+  grep -rl "被替换的字符串"
+  ```
 
 ###Git
 + `git fetch remotename`  
