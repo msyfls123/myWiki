@@ -51,6 +51,16 @@ path2 指向 path1
 ###Vim
 + `t`   
 在新标签页打开（在NERDTree下使用）
++ `ma`  
+创建 node（在NERDTree下使用）
++ `gt / gT`
+切换 tab 页
++ 打开切换多窗口  
+  ```
+  vim -o file1 file2 ...  #水平打开多窗口
+  vim -O file1 file2 ...  #垂直打开多窗口
+  ctrl+w #连按两下切换窗口
+  ```
 + `m{A-Z}`  
 全局书签
 + `'m{A-Z}`  
@@ -113,6 +123,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'jiangmiao/auto-pairs'
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
