@@ -98,10 +98,10 @@ path2 指向 path1
   [webpack.config.js](https://github.com/msyfls123/react-demo/blob/master/webpack.config.js)   
   [package.json](https://github.com/msyfls123/react-demo/blob/master/package.json)
 
-###Joke
+###经验之谈
 + 2 本 Python 书籍的读者读完了爬虫章节后直接转头来爬我们的 js 接口...
 + 事故是常态，常态只是对事故的一次深层封装而已
-+ md 明天老子不提 pr 了，看还怎么出 bug
++ `React + Redux` 这种纯函数开发中，常量的意义不仅仅是不可变性，更重要的是起到数据的可追溯性，尽可能降低因为组件间的隔离而造成的误解
 
 ###Vim config demo
 ```

@@ -15,11 +15,11 @@ Web
 ###Django 与 AngularJS 的冲突
 
 	{{会被Django解析的变量}}.
-	{% if 1 %}会被Django解析的语句{% endif %}
+	<% if 1 %>会被Django解析的语句<% endif %>
 
-	{% verbatim %}
+	<% verbatim %>
     	<span>{{会被Angular解析的变量}}</span>
-	{% endverbatim %}
+	<% endverbatim %>
 
 ###Django加载静态文件(CSS,JS,img)
 
@@ -38,10 +38,10 @@ Web
 
 3.页面引用css、js、img等静态文件:
 
-	{% load staticfiles %}
+	<% load staticfiles %>
 
-	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />
-	<script type="text/javascript" src="{% static "js/angular.min.js" %}" />
+	<link rel="stylesheet" type="text/css" href="<% static "css/bootstrap.min.css" %>" />
+	<script type="text/javascript" src="<% static "js/angular.min.js" %>" />
 
 4.静态文件配置解释
 
@@ -77,45 +77,45 @@ Web
 	]
 
 	#template.html
-	<a href="{% url 'bye' %}">bye</a>
+	<a href="<% url 'bye' %>">bye</a>
 
 ###Django的模板引用
-+ `{% include 'xxx.html' %}` 表示包含其他网页
-+ `{% extends 'base.html' %}` 表示继承自其他网页
-+ `{% block content %}...{% endblock %}` 这其中的内容可被继承的网页更改
++ `<% include 'xxx.html' %>` 表示包含其他网页
++ `<% extends 'base.html' %>` 表示继承自其他网页
++ `<% block content %>...<% endblock %>` 这其中的内容可被继承的网页更改
 
 1.base.html
 
 	<!DOCTYPE html>
 	<html>
 	<head>
-	    <title>{% block title %}默认标题{% endblock %}</title>
+	    <title><% block title %>默认标题<% endblock %></title>
 	</head>
 	<body>
 
-	{% include 'nav.html' %}
+	<% include 'nav.html' %>
 
-	{% block content %}
+	<% block content %>
 	<div>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的默认内容。</div>
-	{% endblock %}
+	<% endblock %>
 
-	{% include 'bottom.html' %}
+	<% include 'bottom.html' %>
 
-	{% include 'analys.html' %}
+	<% include 'analys.html' %>
 
 	</body>
 
 
 2.home.html
 
-	{% extends 'base.html' %}
+	<% extends 'base.html' %>
 
-	{% block title %}欢迎光临首页{% endblock %}
+	<% block title %>欢迎光临首页<% endblock %>
 
-	{% block content %}
-	{% include 'ad.html' %}
+	<% block content %>
+	<% include 'ad.html' %>
 	这里是首页，欢迎光临
-	{% endblock %}
+	<% endblock %>
 
 ###Django密码加密
 
@@ -137,9 +137,9 @@ Web
     	model=Item
 
     #Tell/item_list.html(这是默认模板，会自动寻找，objects_list就是Item.objects.all())
-    {% for item in object_list %}
+    <% for item in object_list %>
     <li>{{ item.title }}:{{ item.amount }}</li>
-	{% endfor %}
+	<% endfor %>
 
 ###Django通用视图查找数据
 

@@ -29,7 +29,7 @@ Markdown是一个很多程序员都喜欢的标记性语言，很多知名博客
 
 现在`templatetags`文件夹就相当于你自己的一个包了。它的使用很简单，在需要的网页中引入`custom_markdown`，然后在需要进行markdown的地方markdown就行了，如下：
 
-	{% load custom_markdown %}
+	<% load custom_markdown %>
 	{{ article.content|custom_markdown }}
 
 
@@ -41,8 +41,8 @@ Markdown是一个很多程序员都喜欢的标记性语言，很多知名博客
 [自定样式地址](https://github.com/isagalaev/highlight.js/tree/master/src/styles) ==> styles.css
 
 	<!-- templates/base.html -->
-	{%load static%}
-	{% get_static_prefix as STATIC_PREFIX %}
+	<%load static%>
+	<% get_static_prefix as STATIC_PREFIX %>
 	<link rel="stylesheet" href="{{STATIC_PREFIX}}css/default.min.css">
 	<script src="{{STATIC_PREFIX}}js/highlight.min.js"></script>
 	<link rel="stylesheet" href="{{STATIC_PREFIX}}css/monokai.css">

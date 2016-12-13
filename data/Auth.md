@@ -103,11 +103,11 @@ Django 提供内置的视图(view)函数用于处理登录和退出(以及其他
 	        <title>login</title>  
 	    </head>  
 	    <body>  
-	    {% if form.errors %}  
+	    <% if form.errors %>  
 	        <p>Your username and password didn't match. Please try again.</p>  
-	    {% endif %}  
-	    <form method="post" action="{% url 'django.contrib.auth.views.login' %}">  
-	    {% csrf_token %}  
+	    <% endif %>  
+	    <form method="post" action="<% url 'django.contrib.auth.views.login' %>">  
+	    <% csrf_token %>  
 	            <table>  
 	            <tr>  
 	                <td>{{ form.username.label_tag }}</td>  
@@ -142,17 +142,17 @@ Django 提供内置的视图(view)函数用于处理登录和退出(以及其他
 		<p>Ip:{{ip_address}}</p>
 		<h3>权限列表</h3>
 		<ul>
-			{% for per in user.get_all_permissions%}
+			<% for per in user.get_all_permissions%>
 				<li>{{per}}</li>
-			{% endfor %}
+			<% endfor %>
 		</ul>
 		<p><b>是否有增加用户的权限: </b>{{perms.auth.add_user}}</p>
 		<p><b>更改用户的权限呢?</b>
-			{% if message %}
+			<% if message %>
 				有啊
-			{% else %}
+			<% else %>
 				也木有啊
-			{% endif %}
+			<% endif %>
 		</p>
 		Welcome, <a target="_self" href="/logout/">logout</a>
 	</body>

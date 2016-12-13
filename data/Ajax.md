@@ -55,10 +55,6 @@ def getnotes(request):
 
 ###Template.html
 ```
-{% load static %}
-{% get_static_prefix as STATIC_PREFIX %}
-<script src="{{STATIC_PREFIX}}js/jquery.min.js"></script>
-
 Hello Notes.
 <ul id='notes'></ul>
 

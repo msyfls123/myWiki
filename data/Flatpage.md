@@ -46,7 +46,7 @@ python manage.py migrate
   高级选项
     模板名称 ：flatpages/about.html
   ```
-  
+
 ###模板应用
 ```
 #flatpages/about.html
@@ -62,18 +62,18 @@ python manage.py migrate
 
 <h3>当前页面可用站点名</h3>
 <ul>
-  {% for f in flatpage.sites.all %}
+  <% for f in flatpage.sites.all %>
     <li>{{f.name}}:{{f.domain}}</li>
-  {% endfor %}
+  <% endfor %>
 </ul>
 
 <h3>可用Flatpages链接</h3>
-{% load flatpages %}
-{% get_flatpages as flatpages %}
+<% load flatpages %>
+<% get_flatpages as flatpages %>
 <ul>
-    {% for page in flatpages %}
+    <% for page in flatpages %>
         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-    {% endfor %}
+    <% endfor %>
 </ul>
 </body>
 </html>
